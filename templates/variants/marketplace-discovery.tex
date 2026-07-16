@@ -1,0 +1,193 @@
+%-------------------------
+% Marketplace discovery resume — upload to Indeed, Glassdoor, JobsRightAI, etc.
+% 6 projects × 3 bullets · all experience · balanced FS / Backend / AI / SDET keywords
+% 2 pages expected. Header: Software Engineer. Not for single-JD apply (use lane variants).
+% Formatting synced to locked templates/main.tex
+% Compile with XeLaTeX or LuaLaTeX for Arial.
+%-------------------------
+% !TEX program = xelatex
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{fontawesome5}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{setspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \raggedright\bfseries
+}{}{0em}{}
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+\newcommand{\metric}[1]{\textbf{#1}}
+
+\newcommand{\resumeItem}[1]{
+  \item\RaggedRight{#1}\par\vspace{-2pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}
+  \item
+  \noindent{\textbf{#1}}\hfill{#2}\\
+  \noindent{\textit{#3}}\hfill{\textit{#4}}
+  \vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}
+  \item
+  \noindent{\textbf{#1}}\hfill{#2}
+  \vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\begin{document}
+
+{\centering
+  {\fontsize{14}{14}\selectfont\bfseries Shubh Kapadia}\\[2pt]
+  {\fontsize{12}{12}\selectfont\normalfont
+  Software Engineer\enspace$|$\enspace
+  (480)-546-2920\enspace$|$\enspace
+  \href{mailto:skapadia2031@gmail.com}{skapadia2031@gmail.com}\\[2pt]
+  \href{https://linkedin.com/in/shubh2031}{LinkedIn}\enspace$|$\enspace
+  \href{https://github.com/shubh209}{GitHub}\enspace$|$\enspace
+  \href{https://v0-shubhkapadia.vercel.app}{Portfolio}
+  }
+\par}
+
+\vspace{4pt}
+\setstretch{1.08}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \item
+  \vspace{-2pt}
+  \noindent{M.S. in Computer Science from ASU, Tempe}\hfill{Graduated 2026}
+  \vspace{-6pt}
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{ClusterOps}\enspace$|$\enspace\href{https://github.com/shubh209/ClusterOps}{GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Built a real-time GPU cluster console with TypeScript, React, REST API, and Server-Sent Events so infrastructure operators see training jobs fail and GPU capacity get wasted the moment it happens instead of tailing server logs while an expensive run is already dying.}
+    \resumeItem{Built a streaming ingestion backend in Go with Kafka, PostgreSQL, and Redis that turns raw GPU and job telemetry into queryable cluster health so the console stays responsive under continuous metric load instead of recomputing status on every request.}
+    \resumeItem{Built an eval-tested failure-analysis engine in Go with \metric{10} table-driven failure scenarios that converts a crashed job into a root cause, debugging playbook, and prevention tips so on-call engineers get a consistent diagnosis instead of guessing at GPU out-of-memory and node failures.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Hearloop}\enspace$|$\enspace\href{https://hearloop.vercel.app/}{Live Demo}}{}
+  \resumeItemListStart
+    \resumeItem{Built an embeddable voice feedback capture flow and dashboard with TypeScript, React, REST APIs, HTML, and CSS on AWS so local businesses capture spoken complaints at higher response rates than forms and fix service problems before customers post a one star review.}
+    \resumeItem{Built server side voice processing with Node.js, REST API, SQL, Redis, and AWS because local businesses capture spoken feedback that cannot be transcribed and stored in the browser and owners cannot manually process every recording or survey export.}
+    \resumeItem{Built a production voice to insight pipeline with ML, LLMs, AWS Bedrock, and SQL using AI orchestration from speech input to labeled feedback because business owners cannot understand customer complaints without manually reading every transcript line by line.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{SEO Audit Engine}\enspace$|$\enspace\href{https://seo-audit-engine.pages.dev/}{Live Demo}}{}
+  \resumeItemListStart
+    \resumeItem{Built an audit submission flow and report dashboard with JavaScript, HTML, CSS, REST API, and Cloudflare so client teams close sales and onboard accounts with one consistent site assessment instead of conflicting tool reports that confuse non technical stakeholders.}
+    \resumeItem{Built server side audit processing with Node.js, REST API, SQL, Redis, and PostgreSQL because agency teams onboarding multiple new accounts each week had no single stored site assessment to share on sales calls and kickoffs without rebuilding the report from scratch every time.}
+    \resumeItem{Built async audit queues with Node.js, REST API, SQL, Redis, and BullMQ keeping the Express REST API under \metric{400ms} because one slow client site review was delaying every other onboarding review waiting in line.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Video Compliance Pipeline}\enspace$|$\enspace\href{https://shubh209.github.io/Youtube-Ads-Compliance-Pipeline/}{Live Demo}}{}
+  \resumeItemListStart
+    \resumeItem{Built an ad auditing web app with JavaScript, HTML, CSS, and REST APIs for marketing teams to generate YouTube and FTC compliance reports so teams catch disclosure violations before ad spend goes live and gets pulled, not after legal or platform enforcement.}
+    \resumeItem{Built compliance audit APIs with Python, FastAPI, REST API, SQL, and PostgreSQL on Azure because compliance reviewers were storing pass or fail decisions and human overrides across email threads with no single audit record to export or revisit.}
+    \resumeItem{Built an ad compliance pipeline with LangGraph, RAG, LLMs, AI orchestration, and Azure because marketing teams were screening ads by hand against long YouTube and FTC policy documents and different reviewers were reaching different conclusions as launch volume grew.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Distributed Caching System}\enspace$|$\enspace\href{https://github.com/shubh209/DistributedCaching}{GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Built a \metric{3} node cache cluster in Go with gRPC, PostgreSQL, and Docker reaching \metric{10,600} reads per second because shoppers checking the same popular products during busy hours were waiting on slow pages while the system looked up identical information from scratch every time.}
+    \resumeItem{Built load and integration testing with REST API, SQL, Go, and CI/CD for thousands of simultaneous requests because customers during a busy sale can see wrong prices or stock levels if the system was never tested when thousands of people use it at once.}
+    \resumeItem{Configured Prometheus and Grafana observability with Git and Docker across all cache nodes because leadership would not approve faster infrastructure without clear proof of how the app performs when customer traffic spikes.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Fake Review Detector}\enspace$|$\enspace\href{https://github.com/shubh209/Fake-Reviews-Detection}{GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Fine tuned BERT and RoBERTa with Python, PyTorch, and ML on \metric{608k} Yelp reviews because small business owners and trust teams cannot manually read thousands of ratings each week to spot manipulation.}
+    \resumeItem{Built a Python ML pipeline with NumPy and production systems that handled a \metric{6.6:1} class imbalance across \metric{608k} samples because fake reviews are the minority class and an unbalanced model would miss most fraud while still looking accurate on paper.}
+    \resumeItem{Built a Python backend with LangChain and ML serving \metric{6} models through one tool interface because product teams needed one integration point instead of rebuilding hosting and inference plumbing for every model they wanted to try.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Crypto Market Simulator}\enspace$|$\enspace\href{https://github.com/shubh209/Fintech-Clone-React-Native}{GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Built a cross platform mobile app with TypeScript, React Native, REST API, SQL, and Cloudflare Workers serving \metric{100+} crypto assets and \metric{176k+} historical price rows so beginner investors see what a past crypto choice means for rent and groceries today instead of misreading a chart and taking risk they do not understand.}
+    \resumeItem{Built a Python data cleanup pipeline with Git and GitHub Actions CI/CD that quarantined unreliable records and prepared \metric{84} assets for simulation so the platform meets SEC and FTC expectations for educational finance apps and reduces legal risk from misleading outcomes.}
+    \resumeItem{Built event driven simulation workflows with JavaScript, React Query, REST API, and Jest across the mobile simulation screen because beginner investors could not connect major news headlines to what a past crypto choice would mean for their budget without a guided scenario flow.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {Academic Records Operations, ASU, AZ}{Jan 2026 -- May 2026}
+  \resumeItemListStart
+    \resumeItem{Aligned with the supervisor and transfer evaluators on goals and took direction upfront, delivering complete course transfer notes on the first pass so evaluators avoided rework and students were not delayed by missing data.}
+    \resumeItem{Applied feedback from colleagues and the supervisor by correcting edge case errors in research notes and explaining my rationale, cutting evaluator rework and moving Salesforce tickets toward resolution faster.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {Software Intern, eInfochips, India}{May 2023 -- Aug 2023}
+  \resumeItemListStart
+    \resumeItem{Built a payment tracking system with TypeScript, Node.js, Express, and \metric{5+} REST APIs on AWS under a paired development model with a senior software engineer, so the accounting team updated payment records without manual spreadsheet handoffs and kept system state strongly consistent.}
+    \resumeItem{Incorporated code review feedback and communicated implementation rationale to cross functional accounting stakeholders, reducing invoice processing time by \metric{40\%} so staff caught payment discrepancies before they affected downstream reporting.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\resumeSubHeadingListStart
+\resumeItemListStart
+\resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, Java, Go, SQL, HTML/CSS, C++}
+\resumeItem{\textbf{Frontend \& Mobile:} React, Next.js, React Native, Expo Router, React Query}
+\resumeItem{\textbf{Backend \& APIs:} Node.js, FastAPI, Express.js, REST APIs, gRPC, OAuth 2.0, JWT}
+\resumeItem{\textbf{Data \& Cloud:} PostgreSQL, Redis, MongoDB, BullMQ, AWS, Azure, Docker, CI/CD, Git}
+\resumeItem{\textbf{AI \& Testing:} LangChain, LangGraph, RAG, PyTorch, AWS Bedrock, Jest, Playwright, load testing}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}
