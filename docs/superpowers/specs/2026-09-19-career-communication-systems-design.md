@@ -46,13 +46,13 @@ Each channel playbook points to the shared standard instead of duplicating its r
 
 The skill wrappers remain short routers. They state invocation triggers, required inputs, files to read, and output constraints. Decision detail lives in the referenced playbooks and shared standard.
 
-### Regression cases
+### Regression examples
 
-Add Markdown fixtures under `career-tools/evals/`:
+Keep Markdown examples beside the channel prompt they exercise:
 
-- `linkedin-connection-note-cases.md`
-- `application-answer-cases.md`
-- `cover-letter-cases.md`
+- `career-tools/linkedin/examples.md`
+- `career-tools/application-answers/examples.md`
+- `career-tools/cover-letters/examples.md`
 
 Each case records:
 
@@ -230,7 +230,7 @@ Include specific Backend scaling work, broad Full Stack responsibilities, vague 
 
 ## Evaluation method
 
-Each fixture receives a manual result of pass, revise, or fail against five dimensions:
+Each example receives a manual result of pass, revise, or fail against five dimensions:
 
 1. Truth: every candidate and company claim is supported.
 2. Judgment: the selected angle is the most useful one for the reader and goal.
@@ -238,9 +238,9 @@ Each fixture receives a manual result of pass, revise, or fail against five dime
 4. Voice: the output is concise, natural, and interview-defensible.
 5. Contract: length, structure, and requested format are satisfied.
 
-Deterministic checks should count characters, words, paragraphs, and questions where applicable. Qualitative checks should explain the expected decision and banned outcomes instead of enforcing exact prose.
+Manual checks count characters, words, paragraphs, and questions where applicable. Qualitative checks explain the expected decision and banned outcomes instead of enforcing exact prose. This system is Markdown-only and does not add a validator or test framework.
 
-Testing is iterative. When a generated output is unacceptable, add or refine a fixture that isolates the decision error before changing the shared standard or a channel playbook. Shared failures belong in the shared standard; channel-specific failures belong in that channel's playbook.
+Testing is iterative. When a generated output is unacceptable, add or refine an example that isolates the decision error before changing the shared standard or a channel playbook. Shared failures belong in the shared standard; channel-specific failures belong in that channel's playbook.
 
 ## Qualitative research input
 
@@ -269,7 +269,7 @@ The implementation is complete when:
 - all three skill entry points invoke the correct playbook and shared references;
 - standard inputs match the contracts in this design;
 - outputs follow channel length and structure rules;
-- every fixture has explicit decision and acceptance criteria;
-- representative runs pass deterministic checks and receive an acceptable manual evaluation;
+- every example has explicit decision and acceptance criteria;
+- representative runs pass manual length, structure, truth, and voice checks;
 - no live resume-pipeline file is changed;
 - no output or application-tracking file is created by default.
