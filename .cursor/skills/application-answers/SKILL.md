@@ -1,57 +1,33 @@
 ---
 name: application-answers
 description: >-
-  Answer job application questions (tell us about yourself, why good fit, etc.)
-  in short humanized prose from a pasted JD and resume tex file. Use when the
-  user pastes application questions, supplemental questions, Greenhouse/Lever
-  prompts, or asks for concise application answers tied to a specific resume.
+  Write short, human job-application answers for Shubh Kapadia from a job
+  description and verbatim questions. Use for supplemental application
+  questions, Greenhouse, Lever, Workday, company portals, fit, motivation,
+  technical, behavioral, or short-biography prompts.
 ---
 
-# Application Question Answers
+# Application question answers
 
-Write **short, human, paste-ready** answers to job application questions for Shubh Kapadia.
+Write one direct, paste-ready final answer per question. The standard input is the JD plus the questions; a pasted resume is not required.
 
-## Before writing
+## Route
 
-1. Read `career-tools/application-answers/application-answers.md` (full rules)
-2. Apply `career-tools/reference/humanizer.md` to every answer
-3. Use **only** facts from the user's pasted **resume `.tex`** for this application
-4. Align to the pasted **JD** (1–2 themes per answer, one concrete resume example)
+1. Read `career-tools/application-answers/application-answers.md` for question strategies, length, and output format.
+2. Read `career-tools/reference/candidate-communication-standard.md` for evidence selection, clarification, truth, and voice decisions.
+3. Read `resume-system/governance/FACT_RULES.md`.
+4. Read `resume-system/facts/work-experience.md`.
+5. Read the current selectable project masters under `resume-system/facts/projects/`.
+6. Read `career-tools/reference/humanizer.md` and apply it internally.
 
-## Required inputs
+## Execute
 
-Refuse until you have:
+- Classify the JD as Backend, Full Stack, AI, or mixed from concrete responsibilities.
+- Let the literal question override the general lane.
+- Select one verified evidence unit by default and a second only when the question requires it.
+- Answer in the first sentence and stop when the question is complete.
+- Honor a portal limit; otherwise use the playbook's variable lengths and 120-word maximum.
+- Ask one clarification only for missing consequential or personal information.
+- Run the playbook's rejection pass and return one final answer per question with its count outside the copy.
 
-- **JD** (or company + role + enough context)
-- **Resume `.tex`** (the exact version submitted for this role)
-- **Question(s)** (paste verbatim)
-
-Optional: character limit per question or global.
-
-## Length (strict)
-
-- **50–90 words** target per answer
-- **120 words hard max** per answer
-- **One paragraph**, **2–5 sentences** — never 2–3 paragraphs
-- Honor character limits in the question text when present
-
-## Output
-
-Per question:
-
-```
-### [Question]
-
-[Single paragraph answer]
-
-Words: N/120
-```
-
-One final answer only. No cover-letter tone. No banned AI openers (passionate, excited, thrilled, journey).
-
-## Do not
-
-- Add projects or metrics not on the pasted resume
-- Write essay-length or multi-paragraph answers unless user says `long form`
-- Keyword-stuff the entire JD into one answer
-- Contradict the submitted resume
+Do not expose evidence-ranking notes, drafts, alternatives, or the humanizer audit. Do not save output unless the user explicitly asks.

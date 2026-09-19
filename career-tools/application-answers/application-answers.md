@@ -1,168 +1,179 @@
-# Application Question Answers
+# Application question answers
 
-> **Scope:** Short, human supplemental answers (Greenhouse, Lever, Workday, company portals).  
-> **Truth:** Pasted resume `.tex` is source of truth for this application.  
-> **Governance:** `resume-system/governance/FACT_RULES.md` — do not add facts not on the resume.  
-> **Voice:** `career-tools/reference/humanizer.md` — sound like a person typed this, not a cover letter bot.
+> Goal: answer the literal application question with the smallest relevant, verified evidence in Shubh's natural voice.
 
----
+## Standard input
 
-## ROLE
+Require:
 
-Answer job application questions for **Shubh Kapadia**. Each answer is **direct, concise, and paste-ready**. Recruiters skim these in seconds; long polished essays look AI-written.
-
----
-
-## USER INPUT TEMPLATE
-
-**Refuse to generate** until you have: **JD** (or role + company), **resume `.tex`**, and **at least one question**.
-
-```
-Company:            (optional if in JD)
-Role:               (optional if in JD)
-JD:                 [paste full job description]
-Resume (.tex):      [paste the exact resume used for this application]
-Questions:          [paste each question; one block or numbered list]
-Character limit:    (optional per question or global — honor if stated in the question text)
+```text
+JD:          full job description
+Questions:   verbatim application questions
+Limits:      optional; include any word or character limit not already in a question
 ```
 
-If a question embeds a limit (e.g. "250 characters"), that limit **overrides** default word caps.
+Infer company and role from the JD when present. Ask for them only when the JD does not identify enough context to answer the question. A pasted resume is not required.
 
----
+## Before writing
 
-## LENGTH (MANDATORY)
+Read, in order:
 
-| Default | Rule |
-|---------|------|
-| **Target** | 50–90 words per answer |
-| **Hard max** | 120 words per answer |
-| **Shape** | **One paragraph only** — 2–5 sentences. **Never** 2–3 paragraphs. |
-| **Exceptions** | Only if user says `long form` or the portal limit requires more |
+1. `career-tools/reference/candidate-communication-standard.md`
+2. `resume-system/governance/FACT_RULES.md`
+3. `resume-system/facts/work-experience.md`
+4. Current selectable project masters under `resume-system/facts/projects/`
+5. `career-tools/reference/humanizer.md`
 
-Short beats complete. Leave out secondary points rather than adding length.
+Use only current, non-superseded facts and wording. Apply the humanizer internally and return only final answers.
 
----
+## Read the JD
 
-## TRUTH RULES
+Classify the role as Backend, Full Stack, AI, or mixed. Then extract:
 
-1. **Only cite** experience, projects, skills, and metrics that appear in the pasted **resume `.tex`**.
-2. Do not pull in projects or bullets removed from this tailored resume.
-3. Do not invent metrics, customers, or production scale.
-4. If the resume uses `\metric{}` or a number, you may repeat it; label mentally as stated on resume.
-5. If a question asks for something not on the resume, answer honestly and briefly (e.g. adjacent skill, willingness to learn) without fabricating experience.
+- what the person will build, operate, or own;
+- the strongest required technical capabilities;
+- the product, customer, or operational problem;
+- the expected level of independence and collaboration.
 
----
+Do not classify from the title or marketing language alone. Weight concrete responsibilities and required qualifications more heavily than repeated buzzwords.
 
-## JD ALIGNMENT
+The literal question overrides the general lane. A collaboration question needs the best collaboration evidence even when a different technical project matches the JD more closely.
 
-1. Read Required + Preferred + Responsibilities from the JD.
-2. Each answer should hit **1–2** JD themes max, with **one concrete example** from the resume.
-3. Do not keyword-stuff. Do not mirror every JD bullet.
-4. Match the **lane** implied by the resume (Full Stack / Backend / AI) and JD title.
+## Read the question
 
----
+Before selecting evidence, identify what the question is evaluating:
 
-## QUESTION PLAYBOOKS
+| Question type | What it needs |
+|---|---|
+| Factual | A direct fact, often one sentence |
+| Motivation | A credible connection to this company's stated work |
+| Fit | One important requirement plus proof and contribution |
+| Technical | A problem, a decision or implementation, and the result or intended purpose |
+| Behavioral | Brief context, Shubh's action, and the result |
+| Personal or preference | Shubh's actual answer, not an inference |
 
-Use the matching playbook. Adapt wording to the exact question.
+Answer the literal question in the first sentence. Do not begin with background that makes the reviewer wait for the answer.
 
-### "Tell us about yourself" / short bio
+## Evidence selection
 
-- Sentence 1: who you are now (MS CS ASU, graduating May 2026, SWE focus).
-- Sentence 2: one internship or work thread from resume.
-- Sentence 3: one project from resume tied to what this role builds.
-- Optional sentence 4: what you want next at **this company** (specific, not generic).
-- **No** life story, childhood, or third project.
+Use one evidence unit by default. An evidence unit is one role, project, or verified fact that can support the complete answer.
 
-### "Why are you a good fit?" / "Why this role?"
+Add a second unit only when:
 
-- Sentence 1: one JD requirement you clearly meet.
-- Sentence 2: proof from resume (project or role + outcome).
-- Sentence 3: second JD requirement OR how you work (collaboration, ownership) with a one-line example.
-- End on fit, not flattery.
+- the question explicitly asks for multiple dimensions;
+- one fact proves technical fit and the other proves a separately requested working style;
+- `Tell us about yourself` needs one work thread and one technical direction.
 
-### "Why [Company]?"
+Do not combine unrelated details into a fictional story. Do not use every matching project. Across several questions, choose different stories when they answer equally well so the application does not sound copied.
 
-- One specific thing about the company/product/team from the JD or public knowledge.
-- Tie to one resume project or experience that matches that direction.
-- Keep it factual; no "I've always dreamed of working here."
+Metrics follow the shared standard and `FACT_RULES.md`. Omit a metric that needs a baseline or project explanation. A clear outcome or capability is better than an isolated number.
 
-### Strength / weakness
+## Length and form
 
-- **Strength:** one strength + one resume proof. No list of three.
-- **Weakness:** real, minor, with what you did about it. No humble-brags ("I work too hard").
+There is no artificial minimum.
 
-### "Anything else we should know?"
+| Answer | Default shape |
+|---|---|
+| Simple factual answer | One direct sentence |
+| Motivation or fit | About 40 to 80 words |
+| Technical or behavioral | About 60 to 110 words |
+| Default maximum | 120 words |
 
-- OPT timing or work authorization **only if** the application did not already collect it and the JD or form expects it.
-- Otherwise: one differentiator from resume not covered elsewhere. One sentence.
+A limit stated by the portal or question overrides these defaults. Use one paragraph unless the question explicitly requests a list or multiple labeled parts. Stop when the question is answered.
 
-### Unknown / custom question
+## Question strategies
 
-- Answer the literal question first.
-- One resume-backed example.
-- Stay under word cap.
+### Why this company?
 
----
+Name one concrete product, problem, customer, or responsibility from the JD. Connect it to verified experience or the kind of work Shubh wants to continue. Do not repeat a mission statement or invent personal passion for an ordinary business.
 
-## VOICE & BANS
+The company name must not be swappable without changing the answer.
 
-Apply `career-tools/reference/humanizer.md`.
+### Why are you a good fit?
 
-**Banned openers:** I am passionate, I am excited, I am thrilled, Throughout my journey, From a young age, I believe I would be a great fit because.
+Lead with the strongest important requirement Shubh meets. Prove it with one example, then explain what that experience would let him contribute. Do not list every matching technology.
 
-**Banned tone:** cover-letter cadence, rule-of-three adjectives, em dashes, "leverage," "holistic," "testament," "delve," "landscape," "foster," "showcase."
+### Tell us about yourself
 
-**Prefer:** short sentences, plain words, first person, one concrete detail per claim.
+Use:
 
----
+1. current professional identity;
+2. one relevant work thread;
+3. one project or technical direction tied to the role.
 
-## OUTPUT FORMAT
+Avoid a chronological biography, a life story, or a third project.
 
-For each question, output:
+### Technical project or challenge
 
-```
-### [Question text as pasted]
+Explain the problem, Shubh's decision or implementation, and the result or intended purpose. Mention tools only when they explain the decision. Preserve prototype framing and design-versus-build status.
 
-[Answer — single paragraph, paste-ready, no surrounding quotes]
+### Behavioral question
+
+Use compressed context, personal action, and result. Focus on what Shubh did rather than what `we` did. Do not add a manufactured lesson or inspirational conclusion.
+
+### Missing skill
+
+State the gap plainly. Name the closest verified experience and explain the realistic transfer without claiming the missing tool. Do not apologize or bury the gap under a long list of adjacent technologies.
+
+### Personal, preference, or consequential fact
+
+Use a verified stored answer when one exists. Otherwise ask Shubh. This includes salary, relocation, work authorization, legal history, demographic or identity questions, and personal motivation that the fact files do not establish.
+
+## Human voice
+
+- Use normal words and contractions when natural.
+- Make one concrete claim at a time.
+- Vary sentence shape across answers in the same application.
+- Keep the answer easy for Shubh to repeat and defend in an interview.
+- Remove em and en dashes from final copy.
+
+Avoid:
+
+- `I am passionate`, `I am excited`, or `I am thrilled` as evidence;
+- restating the question;
+- mirroring several JD phrases in one sentence;
+- repeated `This aligns with...` conclusions;
+- rule-of-three adjective lists;
+- cover-letter cadence or ceremonial closings;
+- identical structure across every answer.
+
+## Clarification
+
+Ask only when the question requires an unstored personal answer or when the JD is too incomplete to identify the company, role, or work being discussed.
+
+Do not ask which project to use, which lane applies, or whether to include a metric. Make those decisions using the shared standard.
+
+## Reject and rewrite
+
+Reject an answer when:
+
+- it does not answer the literal question in the first sentence;
+- the company name could be swapped without meaningful changes;
+- it repeats the JD without adding verified evidence;
+- several projects compete for attention;
+- a metric lacks standalone meaning;
+- it claims motivation the facts cannot support;
+- it upgrades prototype, design, ownership, or scale;
+- Shubh would struggle to say or defend it naturally;
+- several answers reuse the same story without need;
+- it violates the stated or default limit.
+
+## Output
+
+For each question, return:
+
+```text
+### [Question exactly as provided]
+
+[One final paste-ready answer]
 
 Words: N/120
 ```
 
-If a character limit applies:
+When a character limit applies, replace the word count with `Characters: N/[limit]`. Counts sit outside the answer and are not part of the paste-ready copy.
 
-```
-Characters: N/[limit]
-```
+Do not output a draft, alternatives, the internal evidence ranking, or the humanizer audit. Save nothing unless the user explicitly asks.
 
-After all answers, optional **one line** only if something on the resume is risky to over-explain in an interview:
+## Examples
 
-```
-Note: [single factual caveat, or omit section entirely]
-```
-
-Do not output draft + revised versions. One final answer per question.
-
----
-
-## EXAMPLES (length and tone only — always personalize from JD + resume)
-
-**Tell us about yourself** (~75 words)
-
-```
-I'm finishing my MS in CS at ASU in May 2026 and looking for backend-heavy SWE roles. At eInfochips, I built TypeScript and Node.js payment APIs with PostgreSQL, email/password sessions, and role-based access control. I also built a distributed caching prototype in Go with gRPC, Raft coordination, durable fallback, and observability. I'm interested in Acme because your platform team works on the same distributed-systems problems I've been practicing on personal projects.
-```
-
-**Why are you a good fit?** (~65 words)
-
-```
-This role asks for Node services and background jobs, which matches the SEO audit engine I built: an Express API accepts work while BullMQ workers run Playwright crawls off the request path. At eInfochips, I also implemented email/password sessions and role-based access control for an internal payment-tracking prototype. I'm used to pairing with seniors, taking code-review feedback, and shipping with CI. That lines up with your emphasis on ownership and cross-functional work with product.
-```
-
----
-
-## RELATED
-
-- Resume tailoring: `.agents/skills/resume-tailor/SKILL.md`
-- LinkedIn outreach: `career-tools/linkedin/linkedin-connection-note.md`
-- Cursor skill: `.cursor/skills/application-answers/SKILL.md`
+Use `career-tools/application-answers/examples.md` as judgment tests, not templates. When feedback reveals a repeatable failure, update this playbook or add a focused example before the next run.
