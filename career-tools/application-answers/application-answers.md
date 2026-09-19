@@ -170,7 +170,7 @@ For each question, return:
 Words: N/120
 ```
 
-When a character limit applies, replace the word count with `Characters: N/[limit]`. Counts sit outside the answer and are not part of the paste-ready copy.
+When the portal supplies a word limit, replace `120` with that limit. When a character limit applies, replace the word count with `Characters: N/[limit]`. Counts sit outside the answer and are not part of the paste-ready copy.
 
 Do not output a draft, alternatives, the internal evidence ranking, or the humanizer audit. Save nothing unless the user explicitly asks.
 

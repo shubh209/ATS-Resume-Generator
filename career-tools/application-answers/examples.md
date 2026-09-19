@@ -121,7 +121,7 @@ Go, gRPC, Raft-based coordination, caching, durable PostgreSQL fallback, and obs
 I don't have verified project experience with Rust yet. My closest systems work is a Go caching prototype using gRPC, Raft-based coordination, durable PostgreSQL fallback, and observability, so I have practiced the distributed-systems decisions behind the role while learning them in a different language.
 ```
 
-Words: 45/120.
+Words: 44/120.
 
 ### Reject
 
