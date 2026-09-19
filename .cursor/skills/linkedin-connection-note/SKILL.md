@@ -1,64 +1,32 @@
 ---
 name: linkedin-connection-note
 description: >-
-  Generate humanized LinkedIn connection notes for Shubh Kapadia under 300
-  characters and exactly 3 lines. Use when the user wants a connection note,
-  LinkedIn connect message, networking outreach, referral ask, or provides
-  Name, Company, Role, experience, and intent network or ask.
+  Write a reply-oriented LinkedIn connection note for Shubh Kapadia from a
+  person's name, job title, company, About section, and Experience section.
+  Use for recruiter, hiring manager, engineer, founder, networking, or
+  connection-request outreach on LinkedIn.
 ---
 
-# LinkedIn Connection Note
+# LinkedIn connection note
 
-Generate a **3-line**, **≤300 character** LinkedIn connection request note for Shubh Kapadia.
+Write one short note whose goal is to earn a reply, not merely an accepted request.
 
-## Before writing
+## Route
 
-1. Read `career-tools/linkedin/linkedin-connection-note.md` (full rules)
-2. Read `career-tools/linkedin/candidate-profile.md` (metrics and project picks)
-3. If referral intent or JD pasted, read relevant `resume-system/facts/projects/*.md` for accurate metrics
-4. Apply `career-tools/reference/humanizer.md` to the final 3 lines
+1. Read `career-tools/linkedin/linkedin-connection-note.md` for the channel workflow and output contract.
+2. Read `career-tools/reference/candidate-communication-standard.md` for evidence selection, clarification, truth, and voice decisions.
+3. Read `career-tools/linkedin/candidate-profile.md` to identify possible candidate connections.
+4. Read `resume-system/governance/FACT_RULES.md` and confirm selected evidence in the relevant authoritative file under `resume-system/facts/`.
+5. Read `career-tools/reference/humanizer.md` and apply it internally to the final copy.
 
-## Required user inputs
+## Execute
 
-Refuse to generate until you have:
+- Default unstated intent to reply-oriented networking.
+- Select one profile-specific angle before selecting candidate evidence.
+- Use one concise bridge to Shubh and exactly one low-friction question.
+- Use two or three non-empty lines and no more than 300 characters.
+- Omit metrics by default and include one only when it is verified, independently meaningful, and useful to the reply goal.
+- Ask one clarification only when honest personalization or consequential context is missing.
+- Count the exact copy block, run the playbook's rejection pass, and return one final note in its required format.
 
-- Name, Company, Role, Their experience (blurb)
-- **Intent:** `network` | `ask` | `referral`
-- **Reason** (why reaching out)
-
-For **referral:** also require **JD paste** or **Job title**.
-
-Optional: `Ask detail` (overrides Line 3), `Job title` (sharpens ask).
-
-## Structure (no greeting)
-
-| Line | Content |
-|------|---------|
-| 1 | Who Shubh is — tie MS CS ASU / SWE background to their role at Company |
-| 2 | **Warm recipient:** one project + one metric from master context, mapped to their work or JD. **Cold recipient (founder/stranger, no JD):** plain capability statement, no metric — see Cold Outreach rules in `career-tools/linkedin/linkedin-connection-note.md` |
-| 3 | Ask per intent (see prompt file) |
-
-## Defaults
-
-- **network** → Line 3: `Would love to connect.`
-- **ask** → Line 3: 15 minutes on calendar to review application for [Company]
-- **referral** → Line 3: applied to [role] — open to referral if fit
-- **founder-cold** → Line 3: `Open to a quick chat?` — for founders/startups reached cold (LinkedIn, YC message)
-- **No OPT/H1-B** in the 300-char note
-- **No demo/portfolio links** in the note (character budget)
-- **No bare metric with no context in a cold note** — run the metric legibility check (`resume-system/governance/FACT_RULES.md`) before using any number in Line 2
-
-## Output
-
-Use the format in `career-tools/linkedin/linkedin-connection-note.md`:
-
-- Metadata (intent, project, metric label)
-- `--- COPY BELOW ---` block with exactly 3 lines
-- `Characters: N/300` — must be ≤300; rewrite until compliant
-
-## Do not
-
-- Use stale metrics from old networking drafts (80+ ads/hr, 91.3% F1, etc.)
-- Claim production customers for prototype projects
-- Add a fourth line or "Hi [Name]," greeting
-- Output two asks in Line 3
+Do not expose draft alternatives or the humanizer audit. Do not save output unless the user explicitly asks.
