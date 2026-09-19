@@ -13,8 +13,8 @@ Write **short, human, paste-ready** answers to job application questions for Shu
 
 ## Before writing
 
-1. Read `prompts/application-answers.md` (full rules)
-2. Apply `reference/humanizer.md` to every answer
+1. Read `career-tools/application-answers/application-answers.md` (full rules)
+2. Apply `career-tools/reference/humanizer.md` to every answer
 3. Use **only** facts from the user's pasted **resume `.tex`** for this application
 4. Align to the pasted **JD** (1–2 themes per answer, one concrete resume example)
 

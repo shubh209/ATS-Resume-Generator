@@ -1,8 +1,11 @@
 .DS_Store
 **/.DS_Store
 .superpowers/
+resume-system/output/
 knowledge/_raw/
 **/chat-exports/
 *.vsix
 .env
 .env.*
+__pycache__/
+*.pyc

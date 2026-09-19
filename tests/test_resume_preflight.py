@@ -1,0 +1,126 @@
+from __future__ import annotations
+
+import shutil
+import subprocess
+import tempfile
+import unittest
+from pathlib import Path
+
+
+REPO = Path(__file__).resolve().parents[1]
+PREFLIGHT = Path(".agents/skills/resume-tailor/scripts/preflight.py")
+FIXTURE_PATHS = (
+    PREFLIGHT,
+    Path("resume-system/governance/FACT_RULES.md"),
+    Path("resume-system/facts/work-experience.md"),
+    Path("resume-system/facts/per-project-keywords.md"),
+    Path("resume-system/facts/projects"),
+    Path("resume-system/reference/jd-red-flags.md"),
+    Path("resume-system/templates/variants/fullstack-engineer.tex"),
+    Path("resume-system/templates/variants/backend-faang.tex"),
+    Path("resume-system/templates/variants/ai-engineer-faang.tex"),
+)
+
+
+class ResumePreflightTest(unittest.TestCase):
+    def make_fixture(self) -> Path:
+        fixture = Path(tempfile.mkdtemp(prefix="resume-preflight-"))
+        self.addCleanup(shutil.rmtree, fixture)
+        for relative in FIXTURE_PATHS:
+            source = REPO / relative
+            target = fixture / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if source.is_dir():
+                shutil.copytree(source, target, dirs_exist_ok=True)
+            else:
+                shutil.copy2(source, target)
+        return fixture
+
+    def run_preflight(self, fixture: Path) -> subprocess.CompletedProcess[str]:
+        return subprocess.run(
+            ["python3", str(fixture / PREFLIGHT), "--repo", str(fixture)],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+    def assert_rejected(self, result: subprocess.CompletedProcess[str], reason: str) -> None:
+        self.assertNotEqual(
+            result.returncode,
+            0,
+            f"preflight accepted {reason}\nstdout:\n{result.stdout}\nstderr:\n{result.stderr}",
+        )
+
+    def test_rejects_project_without_locked_bank_or_nonselectable_boundary(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/facts/projects/crypto-market-simulator.md"
+        content = path.read_text(encoding="utf-8")
+        content = content.replace(
+            "**Selection status:** NOT SELECTABLE — no current locked resume bullet bank.",
+            "",
+        )
+        path.write_text(content, encoding="utf-8")
+
+        result = self.run_preflight(fixture)
+
+        self.assert_rejected(result, "a project with neither a locked bank nor a nonselectable boundary")
+
+    def test_rejects_two_current_versions_in_one_locked_lane(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/facts/projects/hearloop.md"
+        content = path.read_text(encoding="utf-8")
+        content = content.replace(
+            "### Version 1 (superseded — discard; replaced by Version 2 after user confirmation)",
+            "### Version 1 (current — use this)",
+            1,
+        )
+        path.write_text(content, encoding="utf-8")
+
+        result = self.run_preflight(fixture)
+
+        self.assert_rejected(result, "two current versions in one locked lane")
+
+    def test_rejects_stale_current_employment_title(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/templates/variants/fullstack-engineer.tex"
+        content = path.read_text(encoding="utf-8").replace(
+            "Data Management Intern, ASU, AZ",
+            "Academic Records Operations, ASU, AZ",
+        )
+        path.write_text(content, encoding="utf-8")
+
+        result = self.run_preflight(fixture)
+
+        self.assert_rejected(result, "the retired ASU title in a live lane template")
+
+    def test_rejects_unsupported_realized_side_project_outcome(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/templates/variants/ai-engineer-faang.tex"
+        content = path.read_text(encoding="utf-8").replace(
+            r"\section{Projects}",
+            "\\section{Projects}\n% reducing manual review effort for suspicious content",
+            1,
+        )
+        path.write_text(content, encoding="utf-8")
+
+        result = self.run_preflight(fixture)
+
+        self.assert_rejected(result, "unsupported realized side-project impact in a live template")
+
+    def test_rejects_live_project_bullet_that_drifted_from_locked_master(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/templates/variants/fullstack-engineer.tex"
+        content = path.read_text(encoding="utf-8").replace(
+            "one slow site could not block the remaining batch",
+            "one slow site could not block the remaining client batch",
+            1,
+        )
+        path.write_text(content, encoding="utf-8")
+
+        result = self.run_preflight(fixture)
+
+        self.assert_rejected(result, "a live project bullet whose wording drifted from its locked master")
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Deterministic Resume Tailor"
+  short_description: "Tailor resumes from locked facts and lane templates"
+  default_prompt: "Use $resume-tailor to tailor my resume to this job description using the deterministic workspace workflow."
+
+policy:
+  allow_implicit_invocation: true

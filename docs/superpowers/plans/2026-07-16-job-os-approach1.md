@@ -4,12 +4,12 @@
 
 **Goal:** Ship Phases 1–4 of the Job OS: file knowledge base, update-knowledge curator contracts, answers/LinkedIn rewired to KB, and role-lane goldens + run-log stubs.
 
-**Architecture:** Single Cursor router (`prompts/job-os-router.md` + `.cursor/skills/job-os-router/`) over markdown memory in `knowledge/` plus existing `gpt/` facts. No multi-agent platform. KB writes are propose → approve → write with per-project `_ingest_index.json`.
+**Architecture:** Single Cursor router (`experimental/job-os-router.md` + `.cursor/skills/job-os-router/`) over markdown memory in `knowledge/` plus existing `gpt/` facts. No multi-agent platform. KB writes are propose → approve → write with per-project `_ingest_index.json`.
 
 **Tech Stack:** Markdown contracts, Cursor skills, optional small Python validator for KB skeleton; existing governance for resume (P1, untouched except README pointers).
 
 **Spec:** `docs/superpowers/specs/2026-07-16-job-os-approach1-design.md`  
-**Router prompt (Phase 0 done):** `prompts/job-os-router.md`
+**Router prompt (Phase 0 done):** `experimental/job-os-router.md` (moved from `prompts/job-os-router.md` during the 2026-08 repo restructure — this file is not yet in active use)
 
 ## Global Constraints
 
@@ -27,7 +27,7 @@
 | Path | Responsibility |
 |------|----------------|
 | `knowledge/**` | Durable process memory (A/B/stories/artifacts/index) |
-| `prompts/job-os-router.md` | Ultimate router prompt (exists) |
+| `experimental/job-os-router.md` | Ultimate router prompt (exists) |
 | `.cursor/skills/job-os-router/SKILL.md` | Cursor discovery for router |
 | `prompts/application-answers.md` | Answers contract (rewrite) |
 | `.cursor/skills/application-answers/SKILL.md` | Answers skill (rewrite) |
@@ -145,10 +145,10 @@ Expected: `OK`
 
 **Files:**
 - Create: `.cursor/skills/job-os-router/SKILL.md`
-- Modify: `README.md` — add Job OS row pointing to spec + `prompts/job-os-router.md`
+- Modify: `README.md` — add Job OS row pointing to spec + `experimental/job-os-router.md`
 
 **Interfaces:**
-- Consumes: `prompts/job-os-router.md`
+- Consumes: `experimental/job-os-router.md`
 - Produces: skill that triggers on Job OS / answers+outreach routing / update-knowledge mentions
 
 - [ ] **Step 1: Write skill frontmatter + body**
@@ -165,7 +165,7 @@ description: >-
 
 # Job OS Router
 
-1. Read `prompts/job-os-router.md` and follow it exactly.
+1. Read `experimental/job-os-router.md` and follow it exactly.
 2. Read `docs/superpowers/specs/2026-07-16-job-os-approach1-design.md` if behavior is ambiguous.
 3. For answers/LinkedIn details, also follow the updated prompts under `prompts/` after Task 4–5 land.
 ```
@@ -229,7 +229,7 @@ Replace “resume `.tex` required / only truth” with:
 - Story routing (technical vs behavioral)  
 - Partial `[NEED:]` policy  
 - Output includes trace stub  
-- Point to `prompts/job-os-router.md` for shared rules  
+- Point to `experimental/job-os-router.md` for shared rules  
 
 Keep playbooks for common question types but remove rigid 50–90/120 as hard global max unless portal states a limit (bias short).
 
@@ -312,7 +312,7 @@ Inputs: same person fields + optional prior thread; length guidance (e.g. ~80–
 | Spec area | Task |
 |-----------|------|
 | KB layout A/B/stories/artifacts/experience/index | Task 1 |
-| Router prompt | Done (`prompts/job-os-router.md`) + Task 2 |
+| Router prompt | Done (`experimental/job-os-router.md`) + Task 2 |
 | update-knowledge + ingest | Task 3 |
 | Answers contract | Task 4 |
 | LinkedIn connection + post-connect | Task 5 |
@@ -334,7 +334,7 @@ Inputs: same person fields + optional prior thread; length guidance (e.g. ~80–
 
 Plan complete and saved to `docs/superpowers/plans/2026-07-16-job-os-approach1.md`.
 
-Ultimate router prompt: `prompts/job-os-router.md`.
+Ultimate router prompt: `experimental/job-os-router.md`.
 
 **Two execution options:**
 

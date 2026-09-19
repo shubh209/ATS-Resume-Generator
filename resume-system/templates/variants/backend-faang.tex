@@ -1,0 +1,193 @@
+%-------------------------
+% Backend Engineer — locked lane format
+% FORMAT LOCKED 2026-09-18: preserve section order, typography, spacing,
+% list structure, margins, and heading hierarchy unless the user explicitly
+% requests a format change.
+% Compile with XeLaTeX or LuaLaTeX for Arial.
+%-------------------------
+% !TEX program = xelatex
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{fontawesome5}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{setspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.65in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \raggedright\bfseries
+}{}{0em}{}
+\titlespacing*{\section}{0pt}{12pt}{2pt}
+
+\newcommand{\metric}[1]{\textbf{#1}}
+
+\newcommand{\resumeItem}[1]{
+  \item{#1}\par\vspace{-2pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}
+  \item
+  \noindent{\textbf{#1}}\hfill{#2}\\
+  \noindent{\textit{#3}}\hfill{\textit{#4}}
+  \vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}
+  \item
+  \noindent{\textbf{#1}}\hfill{\textbf{#2}}
+  \vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[
+    leftmargin=0.15in,
+    label={},
+    topsep=0pt
+  ]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[
+    leftmargin=0.15in,
+    itemsep=0pt,
+    topsep=0pt,
+    parsep=0pt,
+    partopsep=0pt
+  ]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-4pt}
+}
+
+\renewcommand\labelitemii{
+  $\vcenter{\hbox{\tiny$\bullet$}}$
+}
+
+\begin{document}
+
+{\centering
+  {\fontsize{14}{14}\selectfont\bfseries Shubh Kapadia}\\[2pt]
+  {\fontsize{11}{11}\selectfont\normalfont
+  Backend Software Engineer\enspace$|$\enspace
+  (480)-546-2920\enspace$|$\enspace
+  \href{mailto:skapadia2031@gmail.com}{skapadia2031@gmail.com}\\[2pt]
+  \href{https://linkedin.com/in/shubh2031}{LinkedIn}\enspace$|$\enspace
+  \href{https://github.com/shubh209}{GitHub}\enspace$|$\enspace
+  \href{https://v0-shubhkapadia.vercel.app}{Portfolio}
+  }
+\par}
+
+\vspace{6pt}
+\setstretch{1.12}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \item
+  \vspace{-2pt}
+  \noindent{M.S. in Computer Science from ASU, Tempe}\hfill{Graduated 2026}
+  \vspace{-6pt}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {Software Engineer, Digital Aid Seattle, Remote}{June 2026 -- Present}
+  \resumeItemListStart
+    \resumeItem{Designed a SQL data model and TypeScript REST APIs that kept member status changes consistent, allowing ensemble managers to see who was active or overdue without checking records manually.}
+    \resumeItem{Built a payment reconciliation pipeline using Node.js, PostgreSQL, and webhooks from Stripe and Zeffy to match payments with member records and route mismatches to ensemble managers before they affected member status.}
+    \resumeItem{Created shared TypeScript interfaces for member and payment data across the React frontend and Node.js backend, ensuring consistent API formats and reducing integration errors and development rework.}
+    \resumeItem{Instrumented payment and member-data workflows with Azure Monitor metrics, logs, and audit trails, allowing developers to identify the exact stage of a production failure and trace changes to member records.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {Data Management Intern, ASU, AZ}{Jan 2026 -- May 2026}
+  \resumeItemListStart
+    \resumeItem{Analyzed student transfer-credit cases using Excel and SQL queries to uncover a recurring process issue, helping cut average review time from 7 to 4 minutes and reduce related support tickets by approximately 30\%.}
+    \resumeItem{Maintained a data pipeline using Python and SQL to clean course and transfer-rule records from Arizona colleges and universities, helping evaluators provide prospective students with accurate transfer-credit information.}
+    \resumeItem{Automated data validation with Python and SQL to catch missing or inconsistent course information and flag questionable records for human review, helping evaluators keep transfer-credit results accurate.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {Software Engineer Intern, eInfochips, India}{Jan 2024 -- May 2024}
+  \resumeItemListStart
+    \resumeItem{Built payment creation and retrieval services using TypeScript, Node.js, Express, REST APIs, PostgreSQL, and AWS, centralizing \metric{10{,}000+} records so \metric{7} accountants could access consistent payment status without coordinating across separate Excel sheets.}
+    \resumeItem{Secured payment data with role-based access control (RBAC), input validation, and PostgreSQL transactions, ensuring only authorized accountants could access records and incomplete updates did not affect reconciliation or reporting.}
+    \resumeItem{Automated staging deployments with GitHub Actions and AWS, instrumented access and error monitoring through CloudWatch, and supported UAT with accounting users, helping the team diagnose backend failures before broader pilot use and reducing interruptions to payment workflows.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Distributed Caching System}\enspace$|$\enspace\href{https://github.com/shubh209/DistributedCaching}{GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Built a \metric{3}-node distributed cache in Go with gRPC, Raft consensus, PostgreSQL, and Docker, sustaining \metric{10{,}600} reads per second and routing cache misses during node failure to keep repeated product lookups available without relying on one cache node.}
+    \resumeItem{Built a Go REST API with cache-aside PostgreSQL access and benchmarked four eviction policies across \metric{10{,}000} operations, reaching a \metric{98.7\%} cache-hit rate to reduce repeated database reads for frequently requested product data.}
+    \resumeItem{Instrumented the Dockerized cache cluster with Prometheus and Grafana dashboards for throughput, latency, hit rate, and errors, making performance bottlenecks visible before selecting a cache policy or increasing cluster capacity.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{ClusterOps}\enspace$|$\enspace\href{https://github.com/shubh209/ClusterOps}{GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Built Go REST APIs with PostgreSQL and Redis cache-aside reads to track simulated GPU nodes, training jobs, and alerts, designed to maintain a current view of cluster health before another training run starts on a degraded node.}
+    \resumeItem{Built a Kafka event pipeline with Go and SQL to process simulated GPU telemetry and fault events, designed to surface failing nodes before more compute time is spent on unhealthy infrastructure.}
+    \resumeItem{Instrumented Dockerized services with Prometheus, Grafana, OpenTelemetry, and Jaeger, designed to trace failures across ingestion, storage, and API layers without searching each service's logs.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Hearloop}\enspace$|$\enspace\href{https://hearloop.vercel.app/}{Live Demo}}{}
+  \resumeItemListStart
+    \resumeItem{Built a multi-tenant REST API with Node.js, Fastify, Kysely, and PostgreSQL, enforcing partner-scoped queries at the data layer to keep each business's feedback records isolated on a shared platform.}
+    \resumeItem{Load and soak tested the AWS API with k6 at \metric{200} concurrent users, holding \metric{149 ms} p95 latency with zero errors to verify the feedback dashboard remains responsive as simulated request volume increases.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\resumeItemListStart
+\resumeItem{\textbf{Languages:} Go, Python, TypeScript, JavaScript, SQL}
+\resumeItem{\textbf{Backend, APIs \& Security:} Node.js, Express.js, Fastify, REST APIs, gRPC, Webhooks, RBAC}
+\resumeItem{\textbf{Data \& Distributed Systems:} PostgreSQL, Redis, Kafka, Cache-Aside, Raft Consensus}
+\resumeItem{\textbf{Cloud \& DevOps:} AWS, Azure, Docker, GitHub Actions, CI/CD, Git}
+\resumeItem{\textbf{Observability \& Testing:} Prometheus, Grafana, OpenTelemetry, k6, Load Testing, Azure Monitor, CloudWatch}
+\resumeItemListEnd
+
+\end{document}

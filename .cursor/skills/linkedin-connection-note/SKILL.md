@@ -13,10 +13,10 @@ Generate a **3-line**, **≤300 character** LinkedIn connection request note for
 
 ## Before writing
 
-1. Read `prompts/linkedin-connection-note.md` (full rules)
-2. Read `networking/candidate-profile.md` (metrics and project picks)
-3. If referral intent or JD pasted, read relevant `gpt/projects/*.md` for accurate metrics
-4. Apply `reference/humanizer.md` to the final 3 lines
+1. Read `career-tools/linkedin/linkedin-connection-note.md` (full rules)
+2. Read `career-tools/linkedin/candidate-profile.md` (metrics and project picks)
+3. If referral intent or JD pasted, read relevant `resume-system/facts/projects/*.md` for accurate metrics
+4. Apply `career-tools/reference/humanizer.md` to the final 3 lines
 
 ## Required user inputs
 
@@ -35,7 +35,7 @@ Optional: `Ask detail` (overrides Line 3), `Job title` (sharpens ask).
 | Line | Content |
 |------|---------|
 | 1 | Who Shubh is — tie MS CS ASU / SWE background to their role at Company |
-| 2 | One project + one metric from master context, mapped to their work or JD |
+| 2 | **Warm recipient:** one project + one metric from master context, mapped to their work or JD. **Cold recipient (founder/stranger, no JD):** plain capability statement, no metric — see Cold Outreach rules in `career-tools/linkedin/linkedin-connection-note.md` |
 | 3 | Ask per intent (see prompt file) |
 
 ## Defaults
@@ -43,12 +43,14 @@ Optional: `Ask detail` (overrides Line 3), `Job title` (sharpens ask).
 - **network** → Line 3: `Would love to connect.`
 - **ask** → Line 3: 15 minutes on calendar to review application for [Company]
 - **referral** → Line 3: applied to [role] — open to referral if fit
+- **founder-cold** → Line 3: `Open to a quick chat?` — for founders/startups reached cold (LinkedIn, YC message)
 - **No OPT/H1-B** in the 300-char note
 - **No demo/portfolio links** in the note (character budget)
+- **No bare metric with no context in a cold note** — run the metric legibility check (`resume-system/governance/FACT_RULES.md`) before using any number in Line 2
 
 ## Output
 
-Use the format in `prompts/linkedin-connection-note.md`:
+Use the format in `career-tools/linkedin/linkedin-connection-note.md`:
 
 - Metadata (intent, project, metric label)
 - `--- COPY BELOW ---` block with exactly 3 lines
