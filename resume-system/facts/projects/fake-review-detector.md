@@ -81,23 +81,23 @@ This project gives anyone — a small restaurant owner, a researcher, or a devel
 ---
 
 **Bullet 1:**
-Fine-tuned transformer models with Python and PyTorch on 608k Yelp reviews, building an ML system designed to help reviewers prioritize suspicious customer feedback.
+Fine-tuned transformer models with Python and PyTorch on 608k Yelp reviews, building an ML system that detects suspicious ratings at scale, designed to reduce the manual review of large volumes of customer feedback.
 Keywords: [Python, PyTorch, transformer models, ML system]
 What: fine-tuned transformer models
 How: trained on 608k Yelp reviews using Python and PyTorch
 Where: fake-review detection system
-Why: help reviewers prioritize suspicious customer feedback
+Why: designed to reduce the manual review of large volumes of customer feedback
 Metric type: MEASURED (608k; source recorded in this master)
 
 ---
 
 **Bullet 2:**
-Built a Python REST API that serves six machine learning models through one prediction endpoint and returns confidence scores, designed to make model classifications comparable without operating separate tools.
+Built a Python REST API that serves six machine learning models through a single prediction endpoint and returns confidence scores, enabling users to compare how different models classify the same review without running separate tools.
 Keywords: [Python, REST API, machine learning models, confidence scores]
 What: one prediction interface for six models
 How: Python REST API returning a verdict and confidence score
 Where: fake-review detection system
-Why: make model classifications comparable without operating separate tools
+Why: enable users to compare how different models classify the same review without running separate tools
 Metric type: MEASURED (6 models; source recorded in this master)
 
 ---

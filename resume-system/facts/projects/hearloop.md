@@ -466,7 +466,7 @@ replace it with Version 1's A3 or draft a new one from currently active capabili
 Locked September 2026 for the projects-first AI Engineer format. Sourced only from confirmed facts in this file.
 
 **Bullet A1 (voice to insight):**
-Built an asynchronous AI pipeline for a multi-tenant voice-feedback platform using Groq Whisper, AWS Bedrock, and structured LLM outputs to convert recordings into transcripts, sentiment, topics, and urgency, designed to help teams identify negative feedback and prioritize issues requiring attention.
+Built an asynchronous AI pipeline for a multi-tenant voice-feedback platform using Groq Whisper, AWS Bedrock, and structured LLM outputs to convert recordings into transcripts, sentiment, topics, and urgency, helping businesses identify negative feedback and prioritize issues requiring attention.
 
 Keywords: [asynchronous AI pipeline, Groq Whisper, AWS Bedrock, structured LLM outputs]
 Metric type: N/A

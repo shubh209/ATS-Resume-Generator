@@ -207,7 +207,7 @@ The initial implementation cached any non-5xx response. During testing, a 404 re
 Use all three bullets together. They describe measured system behavior and intended product value without implying real shoppers, customers, leadership approval, or production adoption.
 
 **B1 — LOCKED**
-Built a 3-node distributed cache in Go with gRPC, Raft consensus, PostgreSQL, and Docker, sustaining 10,600 reads per second and routing cache misses during node failure to keep repeated product lookups available without relying on one cache node.
+Built a 3-node distributed cache in Go with gRPC, Raft consensus, PostgreSQL, and Docker, sustaining 10,600 reads per second and serving repeated product lookups from surviving nodes during a node failure.
 Keywords: [Go, gRPC, Raft consensus, PostgreSQL, Docker]
 Metric type: MEASURED (source recorded in this master)
 Business reason: Keep repeated product lookups available during traffic spikes and single-node failure.

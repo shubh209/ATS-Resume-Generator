@@ -61,7 +61,7 @@ Use the set that matches the role on your resume. Full text also in `seo-audit-e
 
 #### Backend
 
-*Bullets 1–2 locked 2026-06-15 (reason-first, plain-English `because`). Used in `resume-system/templates/variants/backend-faang.tex`.*
+*Bullets 1–2 locked 2026-06-15 (reason-first, plain-English `because`). Used in `resume-system/templates/variants/backend-engineer.tex`.*
 
 1. **LOCKED:** Built server-side audit processing with Node.js, REST APIs, SQL, Redis, and PostgreSQL, designed to give small agencies one stored site assessment without rebuilding the report from scratch.
 

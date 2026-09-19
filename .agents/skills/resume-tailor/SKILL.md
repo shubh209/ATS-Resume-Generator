@@ -57,9 +57,9 @@ Use the first matching rule:
 | Condition | Lane | Template |
 |---|---|---|
 | User explicitly chooses a lane | User choice | Corresponding template |
-| Title or required work centers on ML, LLMs, GenAI, RAG, agents, model evaluation, or MLOps | AI Engineer | `resume-system/templates/variants/ai-engineer-faang.tex` |
+| Title or required work centers on ML, LLMs, GenAI, RAG, agents, model evaluation, or MLOps | AI Engineer | `resume-system/templates/variants/ai-engineer.tex` |
 | Title says Full Stack, or required qualifications include both a frontend framework and backend/API development | Full Stack | `resume-system/templates/variants/fullstack-engineer.tex` |
-| Title or required work centers on APIs, services, databases, platforms, distributed systems, infrastructure, or backend development | Backend | `resume-system/templates/variants/backend-faang.tex` |
+| Title or required work centers on APIs, services, databases, platforms, distributed systems, infrastructure, or backend development | Backend | `resume-system/templates/variants/backend-engineer.tex` |
 | General Software Engineer posting spans frontend and backend without a dominant specialty | Full Stack | `resume-system/templates/variants/fullstack-engineer.tex` |
 
 Record the selected lane and the rule that selected it.

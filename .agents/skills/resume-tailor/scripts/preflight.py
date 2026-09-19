@@ -16,8 +16,8 @@ REQUIRED_FILES = (
 
 LANES = {
     "full-stack": "resume-system/templates/variants/fullstack-engineer.tex",
-    "backend": "resume-system/templates/variants/backend-faang.tex",
-    "ai-engineer": "resume-system/templates/variants/ai-engineer-faang.tex",
+    "backend": "resume-system/templates/variants/backend-engineer.tex",
+    "ai-engineer": "resume-system/templates/variants/ai-engineer.tex",
 }
 
 REQUIRED_BANK_HEADINGS = (

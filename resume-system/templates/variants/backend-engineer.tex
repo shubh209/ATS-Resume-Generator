@@ -159,7 +159,7 @@
   \resumeProjectHeading
     {\textbf{Distributed Caching System}\enspace$|$\enspace\href{https://github.com/shubh209/DistributedCaching}{GitHub}}{}
   \resumeItemListStart
-    \resumeItem{Built a \metric{3}-node distributed cache in Go with gRPC, Raft consensus, PostgreSQL, and Docker, sustaining \metric{10{,}600} reads per second and routing cache misses during node failure to keep repeated product lookups available without relying on one cache node.}
+    \resumeItem{Built a \metric{3}-node distributed cache in Go with gRPC, Raft consensus, PostgreSQL, and Docker, sustaining \metric{10{,}600} reads per second and serving repeated product lookups from surviving nodes during a node failure.}
     \resumeItem{Built a Go REST API with cache-aside PostgreSQL access and benchmarked four eviction policies across \metric{10{,}000} operations, reaching a \metric{98.7\%} cache-hit rate to reduce repeated database reads for frequently requested product data.}
     \resumeItem{Instrumented the Dockerized cache cluster with Prometheus and Grafana dashboards for throughput, latency, hit rate, and errors, making performance bottlenecks visible before selecting a cache policy or increasing cluster capacity.}
   \resumeItemListEnd

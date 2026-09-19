@@ -51,6 +51,10 @@ Choose one usable detail from the About or Experience section:
 
 Repeating a profile fact is not personalization by itself. Add a real observation or a question that could only come from reading this profile.
 
+Before choosing the angle, check for a genuine shared background: a school Shubh attended (ASU, or his undergrad PDEU), the same recent-grad or grad-student status, a shared prior employer, or a mutual group. Shared background is one of the strongest levers for both acceptance and reply, so lead with it when it is real. Never invent or assume one; use it only when the profile or the user states it.
+
+Optimize for a reply, not merely an accepted request. A note barely changes whether a request is accepted, but it strongly affects whether the person replies. So the value of the note is a genuine, easy-to-answer question, not a polished observation. When an observation and a question compete for the character budget, keep the question.
+
 ## Note construction
 
 Build the note from three ingredients, not a fixed sentence template:
@@ -68,11 +72,31 @@ The question must:
 
 Combine ingredients when that sounds more natural. The note may use two or three non-empty lines. Do not force each ingredient onto its own line.
 
+### Defensible reference
+
+Reference the recipient's work only at a level Shubh actually understands and could discuss unprompted. Use a plain description of their area ("machine learning for energy and seismic data") rather than a named project, paper, model, or tool that Shubh has not used. A specific term copied from the profile looks researched to the writer but reads as hollow to the recipient and collapses the moment they reply. If Shubh could not hold a two-sentence conversation about a detail, cut it. This is the "would Shubh struggle to defend this sentence?" check applied to the observation, not only to the claims about Shubh.
+
+### Do not recite what they already know
+
+Do not open by stating a profile fact the recipient obviously knows about themselves (their office locations, their own job title, where they have worked) unless that fact directly sets up the observation or question. A recited fact that could be dropped without weakening the note must be dropped. A recruiter's or hiring manager's stated scope may earn its place when it frames a question that only makes sense given that scope; a location or biography recited for its own sake does not.
+
+### Seniority stance
+
+Shubh is an early-career candidate. When the recipient is clearly more senior (more years, a lead or staff title, or deep domain ownership), the note must not interpret their work at a level only an experienced peer could. Do not tell the recipient what the hard part of their job is, what their work is really like, or which tradeoff mattered. That reads as borrowed insight and undercuts Shubh's credibility.
+
+Instead:
+
+- Keep the observation to what the profile literally states the recipient does.
+- Position Shubh honestly as early-career so the question reads as sincere curiosity, not a peer-to-peer challenge.
+- Let the question ask the senior recipient to explain their own experience, which only they can answer.
+
+This stance rule overrides the ingredient guidance above when the two conflict: an honest early-career question beats a confident-sounding observation Shubh cannot defend.
+
 ## Length
 
 - Hard maximum: 300 characters including spaces, punctuation, and line breaks.
 - Use two or three non-empty lines.
-- Count the exact copy block before returning it.
+- Count the exact copy block with a tool before returning it: run `printf '%s' "<copy>" | wc -m` (or an equivalent counter) and report the number the tool returns. Never assert or estimate a character count that was not actually computed.
 - If over the limit, remove secondary context first. Do not cut the profile-specific detail or turn the question generic.
 
 ## Evidence and metrics
@@ -109,12 +133,16 @@ Reject a note containing any of these:
 - `Would love to connect` as the only ask;
 - a referral, application-review, or calendar request on cold first contact;
 - generic praise such as `impressed by your journey`;
-- a copied profile fact with no observation;
+- a praise-style opener such as `your work caught my eye`, `this stood out to me`, or `I was impressed by`, which carries no observation and is portable to any profile;
+- a copied profile fact with no observation, or a fact the recipient plainly already knows (their locations, title, or work history) that does not set up the observation or question;
+- a reference to a named project, paper, model, or tool from the recipient's profile that Shubh has not used and could not discuss unprompted;
 - more than one question;
 - an unexplained project name, benchmark, or technology list;
 - a long self-introduction;
 - a question that requires an essay;
 - a claim of direct overlap when the work is only adjacent;
+- diagnosing a more-senior recipient's work — stating what the hard part is, what their work is like, or which tradeoff mattered — instead of asking them to explain it (see Seniority stance);
+- an asserted character count that was not computed with a tool;
 - wording that could be sent unchanged to most people with the same title.
 
 ## Output

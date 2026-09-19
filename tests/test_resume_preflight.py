@@ -17,8 +17,8 @@ FIXTURE_PATHS = (
     Path("resume-system/facts/projects"),
     Path("resume-system/reference/jd-red-flags.md"),
     Path("resume-system/templates/variants/fullstack-engineer.tex"),
-    Path("resume-system/templates/variants/backend-faang.tex"),
-    Path("resume-system/templates/variants/ai-engineer-faang.tex"),
+    Path("resume-system/templates/variants/backend-engineer.tex"),
+    Path("resume-system/templates/variants/ai-engineer.tex"),
 )
 
 
@@ -95,7 +95,7 @@ class ResumePreflightTest(unittest.TestCase):
 
     def test_rejects_unsupported_realized_side_project_outcome(self) -> None:
         fixture = self.make_fixture()
-        path = fixture / "resume-system/templates/variants/ai-engineer-faang.tex"
+        path = fixture / "resume-system/templates/variants/ai-engineer.tex"
         content = path.read_text(encoding="utf-8").replace(
             r"\section{Projects}",
             "\\section{Projects}\n% reducing manual review effort for suspicious content",

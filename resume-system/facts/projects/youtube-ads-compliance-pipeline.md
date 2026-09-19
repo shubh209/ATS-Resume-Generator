@@ -273,7 +273,7 @@ Business outcome: Limit inference costs while preserving stronger reasoning for 
 
 ---
 
-**Bullet A3:** Built a 104-case golden evaluation dataset with holdout testing and prompt engineering, reaching 88.2% accuracy with zero false positives on unseen cases and designed to reduce the risk of compliant ads being wrongly flagged for manual review.
+**Bullet A3:** Built a 104-case golden evaluation dataset with holdout testing and prompt engineering, reaching 88.2% accuracy with zero false positives on unseen cases and reducing the risk of compliant ads being wrongly flagged for manual review.
 
 Keywords: [evaluation, golden dataset, prompt engineering, holdout testing]
 
