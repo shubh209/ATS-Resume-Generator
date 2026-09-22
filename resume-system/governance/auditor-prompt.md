@@ -48,7 +48,7 @@ None found.
 
 **STYLE** — corporate jargon; hyphenated phrases; skills-only keywords counted as bullet coverage
 
-**PLACEMENT** — <75% JD keywords likely in first half of page 1
+**PLACEMENT** — The three JD priorities must appear in the earliest available truthful evidence allowed by the lane's locked structure. A supported priority is buried beneath less relevant evidence.
 
 Do not output a passing grade. Do not say "looks good." Failures only.
 

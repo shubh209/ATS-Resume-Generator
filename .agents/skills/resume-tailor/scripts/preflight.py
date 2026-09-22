@@ -41,6 +41,19 @@ REQUIRED_CONTRACT_TEXT = {
     ".agents/skills/resume-tailor/references/tailoring-report-schema.md": (
         "Use this schema only when the user explicitly requests a tailoring report.",
     ),
+    "resume-system/facts/per-project-keywords.md": (
+        "This file does not authorize facts, metrics, skills, project counts, or selection",
+        "resume-system/reference/qualification-taxonomy.md",
+    ),
+    "resume-system/governance/auditor-prompt.md": (
+        "The three JD priorities must appear in the earliest available truthful evidence allowed by the lane's locked structure.",
+    ),
+}
+
+FORBIDDEN_CONTRACT_TEXT = {
+    "resume-system/governance/auditor-prompt.md": (
+        "<75% JD keywords likely in first half of page 1",
+    ),
 }
 
 LANES = {
@@ -291,6 +304,15 @@ def main() -> int:
         for snippet in snippets:
             if snippet not in content:
                 errors.append(f"{relative} missing required contract text: {snippet}")
+
+    for relative, snippets in FORBIDDEN_CONTRACT_TEXT.items():
+        path = root / relative
+        if not path.is_file():
+            continue
+        content = path.read_text(encoding="utf-8")
+        for snippet in snippets:
+            if snippet in content:
+                errors.append(f"{relative} contains forbidden contract text: {snippet}")
 
     project_files = sorted((root / "resume-system/facts/projects").glob("*.md"))
     if not project_files:

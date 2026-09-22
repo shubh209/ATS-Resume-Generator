@@ -176,6 +176,28 @@ class ResumePreflightTest(unittest.TestCase):
         result = self.run_preflight(fixture)
         self.assert_rejected(result, "a report schema without its opt-in boundary")
 
+    def test_rejects_fixed_keyword_percentage_in_auditor(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/governance/auditor-prompt.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "The three JD priorities must appear in the earliest available truthful evidence allowed by the lane's locked structure.",
+            "<75% JD keywords likely in first half of page 1",
+        )
+        path.write_text(content, encoding="utf-8")
+        result = self.run_preflight(fixture)
+        self.assert_rejected(result, "the retired fixed placement percentage")
+
+    def test_rejects_keyword_map_that_authorizes_facts(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/facts/per-project-keywords.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "This file does not authorize facts, metrics, skills, project counts, or selection",
+            "This file authorizes facts, metrics, skills, project counts, and selection",
+        )
+        path.write_text(content, encoding="utf-8")
+        result = self.run_preflight(fixture)
+        self.assert_rejected(result, "a keyword map claiming fact authority")
+
 
 if __name__ == "__main__":
     unittest.main()

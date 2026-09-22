@@ -2,23 +2,15 @@
 
 > Routing reference only. This file does not authorize facts, metrics, skills, project counts, or selection of a project without a current locked bullet bank. The live rules are in `.agents/skills/resume-tailor/SKILL.md`.
 
-## Role Keyword Requirements (Reference)
+## Role Qualification Profiles
 
-**Full Stack:** Degree, TypeScript, JavaScript, HTML, CSS, REST API, SQL (any),
-Cloud (AWS/Azure/GCP), Backend (Python/Java/Go/C#), React/Angular/Node.js/Vue.js (any),
-DevOps, CI/CD, Agile, Git. Extra credit: Large scale, AI tools, cross functional
+The authoritative market profiles live in `resume-system/reference/qualification-taxonomy.md`:
 
-**Backend:** Degree, Agile, Go/Golang, Fiber/Node.js/Next.js (any), SQL, MongoDB,
-Redis, REST API, Cloud, Git, CI/CD, Kafka, RabbitMQ, Docker, Kubernetes, C++, OOP
+- Full Stack Software Engineer
+- Go / Node.js Engineer, routed through the Backend lane
+- AI Engineer
 
-**SDET:** Degree, Testing methodologies (functional/e2e/regression/stress/load/smoke - any),
-Database testing/SQL, Agile/Scrum, CI/CD, Git, Jenkins, bug communication, coding language,
-Playwright/Cypress/Selenium (any), test management tools (TestRail/Azure DevOps/Jama)
-
-**AI Engineer:** Degree, Backend language, ML, LLMs, Cloud, production systems,
-Agentic systems, Claude Code/Cursor/Codex (any), LangGraph/LangChain/Google ADK (any),
-technical communication to non-technical stakeholders, MLOps, AI architecture,
-AI orchestration. Rare: industry experience, SQL, RAG, Git, NumPy
+Use the target JD for live priorities. Use this file only to map verified project evidence to that vocabulary.
 
 ---
 
@@ -92,7 +84,7 @@ Locked July 2026 for a general referral handoff resume.
 |---|---|---|
 | TypeScript | TypeScript (Full Stack) | Backend language (AI Engineer) |
 | Node.js | Node.js (Full Stack, Backend) | Backend language (AI Engineer) |
-| Fastify | Fiber/Node.js (Backend) | REST API framework |
+| Fastify | Node.js backend framework (Full Stack, Go / Node.js) | REST API framework |
 | Next.js | Next.js/React (Full Stack) | Frontend framework |
 | React | React (Full Stack) | — |
 | PostgreSQL | SQL (Full Stack, Backend, SDET) | Database testing (SDET) |
@@ -215,9 +207,9 @@ Locked July 2026 for a general referral handoff resume.
 | TypeScript | TypeScript (Full Stack) | Backend language (AI Engineer) |
 | JavaScript | JavaScript (Full Stack) | — |
 | Python | Backend language (Full Stack, AI Engineer) | Coding language (SDET) |
-| React Native | React (Full Stack alt) | — |
+| React Native | React Native (Full Stack) | Mobile frontend framework |
 | Cloudflare Workers | Cloud (Full Stack, Backend, AI Engineer) | Backend (serverless) |
-| Hono | Node.js framework (Full Stack, Backend) | — |
+| Hono | Backend framework (Full Stack, Go / Node.js) | Serverless REST API framework |
 | Cloudflare D1 | SQL (Full Stack, Backend, SDET) | Database testing (SDET) |
 | Cloudflare KV | Redis equivalent (Backend) | Caching |
 | REST APIs | REST API (Full Stack) | — |
