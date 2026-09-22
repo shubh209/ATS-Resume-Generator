@@ -16,6 +16,8 @@ FIXTURE_PATHS = (
     Path("resume-system/facts/per-project-keywords.md"),
     Path("resume-system/facts/projects"),
     Path("resume-system/reference/jd-red-flags.md"),
+    Path("resume-system/reference/hiring-reality.md"),
+    Path("resume-system/reference/qualification-taxonomy.md"),
     Path("resume-system/templates/variants/fullstack-engineer.tex"),
     Path("resume-system/templates/variants/backend-engineer.tex"),
     Path("resume-system/templates/variants/ai-engineer.tex"),
@@ -120,6 +122,23 @@ class ResumePreflightTest(unittest.TestCase):
         result = self.run_preflight(fixture)
 
         self.assert_rejected(result, "a live project bullet whose wording drifted from its locked master")
+
+    def test_rejects_missing_hiring_reality_reference(self) -> None:
+        fixture = self.make_fixture()
+        (fixture / "resume-system/reference/hiring-reality.md").unlink()
+        result = self.run_preflight(fixture)
+        self.assert_rejected(result, "a missing hiring-reality reference")
+
+    def test_rejects_missing_qualification_profile(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/reference/qualification-taxonomy.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "## Go / Node.js Engineer",
+            "## Backend Profile Removed",
+        )
+        path.write_text(content, encoding="utf-8")
+        result = self.run_preflight(fixture)
+        self.assert_rejected(result, "a taxonomy missing the Go / Node.js profile")
 
 
 if __name__ == "__main__":

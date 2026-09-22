@@ -12,7 +12,24 @@ REQUIRED_FILES = (
     "resume-system/facts/work-experience.md",
     "resume-system/facts/per-project-keywords.md",
     "resume-system/reference/jd-red-flags.md",
+    "resume-system/reference/hiring-reality.md",
+    "resume-system/reference/qualification-taxonomy.md",
 )
+
+REQUIRED_REFERENCE_HEADINGS = {
+    "resume-system/reference/hiring-reality.md": (
+        "## Application strategy",
+        "## Qualification evidence",
+        "## ATS and recruiter behavior",
+        "## Format and application conventions",
+    ),
+    "resume-system/reference/qualification-taxonomy.md": (
+        "## Full Stack Software Engineer",
+        "## Go / Node.js Engineer",
+        "## AI Engineer",
+        "## Literal wording variants",
+    ),
+}
 
 LANES = {
     "full-stack": "resume-system/templates/variants/fullstack-engineer.tex",
@@ -243,6 +260,15 @@ def main() -> int:
     for relative in REQUIRED_FILES:
         if not (root / relative).is_file():
             errors.append(f"missing required file: {relative}")
+
+    for relative, headings in REQUIRED_REFERENCE_HEADINGS.items():
+        path = root / relative
+        if not path.is_file():
+            continue
+        content = path.read_text(encoding="utf-8")
+        for heading in headings:
+            if heading not in content:
+                errors.append(f"{relative} missing required heading: {heading}")
 
     project_files = sorted((root / "resume-system/facts/projects").glob("*.md"))
     if not project_files:
