@@ -69,6 +69,8 @@ Sole architect and engineer. All design and implementation decisions were mine.
 
 ## Impact
 
+> Note: the throughput, hit-rate, and latency numbers below come from the author's own simulation/benchmark scripts. Re-run the scripts to confirm current values before citing them fresh in a resume or interview; they were not re-verified in the most recent review pass. (The Get/Set concurrency data race those benchmarks run against has since been fixed; `go test -race ./...` is clean.)
+
 **Go backend throughput** — processed ~10,600 read requests/sec and ~6,000 writes/sec at 100% success rate under concurrent load. This measures the throughput capacity a backend needs when the cost of degradation is measured in lost requests per second.
 
 **Cluster fault tolerance** — leader election in ~163ms on startup and ~259ms average re-election after node failure across 5 trials. The system self-heals in under 300ms with zero requests dropped.

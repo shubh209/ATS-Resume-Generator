@@ -115,6 +115,18 @@ Use compressed context, personal action, and result. Focus on what Shubh did rat
 
 State the gap plainly. Name the closest verified experience and explain the realistic transfer without claiming the missing tool. Do not apologize or bury the gap under a long list of adjacent technologies.
 
+### Reframe a vague or "be specific" prompt
+
+Some prompts are broad ("why us", "what excites you", "an innovative way you used AI") and some explicitly demand specifics. A generic true answer fails these, and Shubh's own supplied motivation is often generic ("I want to build products that help people"). Do not paste the generic seed. Anchor it to one concrete thing about this company or this project so the answer could not be reused elsewhere.
+
+- Keep Shubh's real motivation as the backbone, then attach it to a specific product, problem, modality, or responsibility named in the JD.
+- For "innovative use of AI", the honest strong answer is usually the rigor, not the novelty: evaluation, error analysis, guardrails, or a measured before/after, rather than claiming a flashy feature.
+- Do not manufacture excitement for research or a specialty Shubh cannot defend (e.g. model architecture) when the role and evidence are on the product or platform side. Anchor to the part Shubh can speak to.
+
+### Consequential eligibility gates
+
+Before finalizing answers, check the JD for hard gates that can void the application regardless of answer quality: current-enrollment requirements (internships), in-person/location requirements, work-authorization or visa constraints, and seniority floors the candidate clearly does not meet. When one is present and the fact files do not confirm Shubh clears it, flag it in one or two lines alongside the answers so he can decide whether to spend the application. Do not silently answer around it, and do not pad the answer to hide it.
+
 ### Personal, preference, or consequential fact
 
 Use a verified stored answer when one exists. Otherwise ask Shubh. This includes salary, relocation, work authorization, legal history, demographic or identity questions, and personal motivation that the fact files do not establish.
@@ -153,6 +165,8 @@ Reject an answer when:
 - several projects compete for attention;
 - a metric lacks standalone meaning;
 - it claims motivation the facts cannot support;
+- a "be specific" prompt is answered generically, or a broad prompt is answered with a seed that could be reused for any company;
+- it manufactures excitement for a research area or specialty Shubh cannot defend, instead of anchoring to the product or platform angle he can;
 - it upgrades prototype, design, ownership, or scale;
 - Shubh would struggle to say or defend it naturally;
 - several answers reuse the same story without need;

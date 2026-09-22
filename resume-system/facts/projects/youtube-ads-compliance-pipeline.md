@@ -40,6 +40,8 @@ Solo-built end-to-end compliance pipeline with two ingestion paths: paste a YouT
 | Platforms covered | 5 (YouTube, Meta, TikTok, X, FTC) | MEASURED | policy_sources.py |
 | Golden eval accuracy (v1, 10-case) | 80% (8/10 test cases pass) | MEASURED | evals/eval_results.json |
 | Golden eval dataset v2 size | 104 cases (72 FAIL / 32 PASS) | MEASURED | evals/golden_dataset_v2.json |
+| Champion baseline accuracy (v2, pre-fix) | 76.9% (80/104), 68.8% false-positive rate | MEASURED | commit 9c777e3 |
+| Accuracy after round-1 prompt fix (improvement set) | 93.3% (from 72.5%), FP 9.1% (from 73.7%) | MEASURED | commit 1a3f046 |
 | Eval accuracy on unseen cases (v2) | 88.2% (30/34) | MEASURED | evals/round2_holdout_run.log, commit fb4e983 |
 | False positives on compliant ads (v2, unseen) | 0% (0/9 compliant cases flagged) | MEASURED | holdout run, commit fb4e983 |
 | pytest tests in CI gate | 57 | MEASURED | GitHub Actions |
