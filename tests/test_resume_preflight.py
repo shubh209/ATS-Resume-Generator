@@ -187,6 +187,32 @@ class ResumePreflightTest(unittest.TestCase):
         result = self.run_preflight(fixture)
         self.assert_rejected(result, "the retired fixed placement percentage")
 
+    def test_rejects_auditor_without_conditional_report_table_contract(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / "resume-system/governance/auditor-prompt.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "Selection and Fact Check tables are required only when auditing an explicitly requested tailoring report.",
+            "Selection and Fact Check tables are always required.",
+        )
+        path.write_text(content, encoding="utf-8")
+
+        result = self.run_preflight(fixture)
+
+        self.assert_rejected(result, "an auditor without conditional report tables")
+
+    def test_rejects_skill_without_same_jd_artifact_set_contract(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / ".agents/skills/resume-tailor/SKILL.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "Update an existing same-JD directory in place only when its artifact set matches the current request.",
+            "Always update an existing same-JD directory in place.",
+        )
+        path.write_text(content, encoding="utf-8")
+
+        result = self.run_preflight(fixture)
+
+        self.assert_rejected(result, "a skill without same-JD artifact-set handling")
+
     def test_rejects_keyword_map_that_authorizes_facts(self) -> None:
         fixture = self.make_fixture()
         path = fixture / "resume-system/facts/per-project-keywords.md"

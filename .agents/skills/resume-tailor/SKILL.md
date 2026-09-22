@@ -151,7 +151,7 @@ When the user explicitly asks to save the output, write only these files into `r
 - Always write `job-description.md` and `resume.tex`.
 - Write `tailoring-report.md` only when the user explicitly requests a tailoring report.
 
-If that directory already exists for the same JD, update it in place; for a different JD, append `-v2`, then `-v3`. These are the only files a live run may create. Master files under `resume-system/` are never modified by a tailoring run.
+Update an existing same-JD directory in place only when its artifact set matches the current request. If a same-JD directory's artifact set differs from the current request, allocate the next `-v2`, `-v3`, and so on directory rather than deleting or leaving a stale report. A default saved run must end with exactly `job-description.md` and `resume.tex` in its selected output directory. An explicit-report saved run must end with those two files plus `tailoring-report.md`. For a different JD, append `-v2`, then `-v3`. Do not delete old output directories or reports. These are the only files a live run may create. Master files under `resume-system/` are never modified by a tailoring run.
 
 ## Allowed resume changes
 

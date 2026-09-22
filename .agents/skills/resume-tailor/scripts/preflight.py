@@ -37,6 +37,7 @@ REQUIRED_CONTRACT_TEXT = {
         "resume-system/reference/qualification-taxonomy.md",
         "Do not produce a tailoring report unless the user explicitly requests one.",
         "Write `tailoring-report.md` only when the user explicitly requests a tailoring report.",
+        "Update an existing same-JD directory in place only when its artifact set matches the current request.",
     ),
     ".agents/skills/resume-tailor/references/tailoring-report-schema.md": (
         "Use this schema only when the user explicitly requests a tailoring report.",
@@ -47,6 +48,7 @@ REQUIRED_CONTRACT_TEXT = {
     ),
     "resume-system/governance/auditor-prompt.md": (
         "The three JD priorities must appear in the earliest available truthful evidence allowed by the lane's locked structure.",
+        "Selection and Fact Check tables are required only when auditing an explicitly requested tailoring report.",
     ),
 }
 

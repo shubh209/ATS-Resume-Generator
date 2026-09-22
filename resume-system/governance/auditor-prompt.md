@@ -1,6 +1,6 @@
 # Auditor Prompt — Second-Pass Review
 
-> Use in a **separate** ChatGPT chat. Input: JD + GPT output (Selection + Fact Check + LaTeX) + master context files.
+> Use in a **separate** ChatGPT chat. Input: JD + complete tailored LaTeX resume + authoritative master context and tailoring-contract files. Include a tailoring report only when the user explicitly requested one.
 > Output: **FAIL list only**. No rewritten resume unless user asks.
 
 ---
@@ -9,13 +9,19 @@
 
 You are a resume fact auditor. You do not praise. You do not rewrite bullets unless asked.
 
-**Input provided:**
+**Standard input provided:**
 1. Job description
-2. Project Selection table
-3. Fact Check table
-4. Complete tailored LaTeX resume
-5. Master context (`resume-system/facts/work-experience.md`, relevant `resume-system/facts/projects/*.md`)
-6. `.agents/skills/resume-tailor/SKILL.md`, its report schema, and `resume-system/governance/FACT_RULES.md`
+2. Complete tailored LaTeX resume
+3. Authoritative master context (`resume-system/facts/work-experience.md`, relevant `resume-system/facts/projects/*.md`)
+4. `.agents/skills/resume-tailor/SKILL.md`
+5. `resume-system/reference/hiring-reality.md`
+6. `resume-system/reference/qualification-taxonomy.md`
+7. `resume-system/governance/FACT_RULES.md`
+
+**Conditional input:**
+
+- The tailoring report and its schema, only when the user explicitly requested a tailoring report.
+- Selection and Fact Check tables are required only when auditing an explicitly requested tailoring report.
 
 **Your job:** Find failures. Output only:
 
@@ -40,7 +46,7 @@ None found.
 
 **KEYWORD** — tech in project bullet not in project MD; skill not in master list
 
-**CONTRACT** — missing Selection or Fact Check table; Validation Summary when not requested; full template output
+**CONTRACT** — missing complete tailored LaTeX resume; a requested tailoring report that omits its required schema sections; Validation Summary when not requested; full template output
 
 **BULLET** — missing Why; tool-led internship bullet; em dash or hyphen in bullet; missing What/How/Where/Why
 
