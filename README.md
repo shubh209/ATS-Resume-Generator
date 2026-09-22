@@ -24,7 +24,7 @@ ATS Resume Generator/
 │   ├── governance/           ← fact and audit rules
 │   │   ├── FACT_RULES.md · auditor-prompt.md · feedback-log.md
 │   ├── templates/variants/   ← lane templates (fullstack / backend / ai-engineer + non-live extras)
-│   └── reference/            ← jd-red-flags.md (read during tailoring)
+│   └── reference/            ← hiring-reality.md · qualification-taxonomy.md · jd-red-flags.md
 │
 ├── career-tools/             ← human-facing systems around the resume
 │   ├── linkedin/             ← connection-note prompt, candidate-profile, scripts
@@ -55,6 +55,7 @@ ATS Resume Generator/
 2. Follow `.agents/skills/resume-tailor/SKILL.md`.
 3. Start from the lane template it selects under `resume-system/templates/variants/`.
 4. Run `.agents/skills/resume-tailor/scripts/preflight.py` before completion.
+5. Return the tailored resume only. Produce a tailoring report only when the user explicitly asks for one.
 
 ---
 
@@ -68,7 +69,10 @@ ATS Resume Generator/
 | Locked resume bullets | each file in `resume-system/facts/projects/` |
 | Work experience LaTeX | `resume-system/facts/work-experience.md` |
 | Lane templates | `resume-system/templates/variants/` |
+| Hiring-market operating assumptions | `resume-system/reference/hiring-reality.md` |
+| Role qualification profiles | `resume-system/reference/qualification-taxonomy.md` |
 | JD red flags | `resume-system/reference/jd-red-flags.md` |
+| Optional tailoring-report schema | `.agents/skills/resume-tailor/references/tailoring-report-schema.md` |
 | Recruiter framework | `career-tools/reference/headless-headhunter.md` |
 | De-AI prose when editing MDs | `career-tools/reference/humanizer.md` |
 | **LinkedIn connection note (300 chars)** | `career-tools/linkedin/linkedin-connection-note.md` |
