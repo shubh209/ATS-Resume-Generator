@@ -45,8 +45,10 @@ Read these files and treat them as immutable:
 2. `resume-system/facts/work-experience.md`
 3. `resume-system/facts/per-project-keywords.md`
 4. Every file in `resume-system/facts/projects/*.md`
-5. `resume-system/reference/jd-red-flags.md`
-6. Exactly one lane template from the routing table below
+5. `resume-system/reference/hiring-reality.md`
+6. `resume-system/reference/qualification-taxonomy.md`
+7. `resume-system/reference/jd-red-flags.md`
+8. Exactly one lane template from the routing table below
 
 Do not edit any file in the read set during tailoring.
 
@@ -74,6 +76,10 @@ Extract exactly three priority signals:
 4. Ignore benefits, culture statements, generic enthusiasm, and unsupported wish-list tools.
 
 Preserve the exact JD wording in the tailoring report. Do not copy phrases unnaturally into locked bullets.
+
+Classify relevant requirements internally as eligibility, technology, responsibility, collaboration, or optional tooling. Use the role profiles as vocabulary and tie-breaking context, never as authority for a candidate claim.
+
+Place the strongest truthful evidence for the three priorities as early as the locked lane structure permits. Give special weight to the first bullet of the most recent relevant role. Do not change locked wording to force placement.
 
 ## Work experience
 
@@ -131,13 +137,19 @@ Use only skills documented as actually used in current `resume-system/facts/work
 
 ## Output
 
-Default: return the result in chat. Deliver the complete tailored `resume.tex` (or the requested answers) and the tailoring report directly in the response. Do not create or edit any file during a live run unless the user explicitly asks you to store it.
+Default: return only the complete tailored `resume.tex`, or only the specifically requested answer when the request is narrower than a resume.
+
+Do not produce a tailoring report unless the user explicitly requests one. Do not append a selection table, fact-check table, gaps table, validation summary, or ATS explanation to the default response. Report an actual blocker, failed invariant, or material fact-integrity warning when necessary.
+
+Do not create or edit any file during a live run unless the user explicitly asks you to store it.
 
 When the user explicitly asks to save the output, write only these files into `resume-system/output/YYYY-MM-DD-company-role/` (gitignored scratch), using lowercase kebab-case for company and role:
 
 - `job-description.md` — exact JD supplied by the user
 - `resume.tex` — complete compilable copy of the selected lane template
-- `tailoring-report.md` — decision and validation record
+
+- Always write `job-description.md` and `resume.tex`.
+- Write `tailoring-report.md` only when the user explicitly requests a tailoring report.
 
 If that directory already exists for the same JD, update it in place; for a different JD, append `-v2`, then `-v3`. These are the only files a live run may create. Master files under `resume-system/` are never modified by a tailoring run.
 
@@ -171,8 +183,8 @@ Before completion:
 10. Compile the tailored copy when a LaTeX engine is available and the output was saved to a file.
 11. If compilation is unavailable, record `Layout validation: NOT RUN — LaTeX engine unavailable`; never claim the resume is one page.
 
-Use the exact report structure in [references/tailoring-report-schema.md](references/tailoring-report-schema.md).
+Use the exact report structure in [references/tailoring-report-schema.md](references/tailoring-report-schema.md) only for explicit report requests.
 
 ## Completion
 
-A run is complete when the tailored `resume.tex` (or requested answers) and the tailoring report are delivered in chat, the report names every selected source, and validation results are explicit. End with at most two material warnings. Only when the user asked to store the output: also confirm the three files were written and link them.
+A default run is complete when the tailored `resume.tex` or requested answer is delivered after internal validation. For an explicit report request, deliver the report using the schema. End with at most two material warnings. Only when the user asked to store the output: confirm `job-description.md` and `resume.tex` were written and link them; also confirm and link `tailoring-report.md` only when explicitly requested.

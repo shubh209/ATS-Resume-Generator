@@ -11,6 +11,9 @@ REPO = Path(__file__).resolve().parents[1]
 PREFLIGHT = Path(".agents/skills/resume-tailor/scripts/preflight.py")
 FIXTURE_PATHS = (
     PREFLIGHT,
+    Path(".agents/skills/resume-tailor/SKILL.md"),
+    Path(".agents/skills/resume-tailor/references/tailoring-report-schema.md"),
+    Path("resume-system/governance/auditor-prompt.md"),
     Path("resume-system/governance/FACT_RULES.md"),
     Path("resume-system/facts/work-experience.md"),
     Path("resume-system/facts/per-project-keywords.md"),
@@ -139,6 +142,39 @@ class ResumePreflightTest(unittest.TestCase):
         path.write_text(content, encoding="utf-8")
         result = self.run_preflight(fixture)
         self.assert_rejected(result, "a taxonomy missing the Go / Node.js profile")
+
+    def test_rejects_skill_without_hiring_reality_read_set(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / ".agents/skills/resume-tailor/SKILL.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "5. `resume-system/reference/hiring-reality.md`\n",
+            "",
+        )
+        path.write_text(content, encoding="utf-8")
+        result = self.run_preflight(fixture)
+        self.assert_rejected(result, "a live skill missing hiring reality from its read set")
+
+    def test_rejects_skill_without_report_opt_in_contract(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / ".agents/skills/resume-tailor/SKILL.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "Do not produce a tailoring report unless the user explicitly requests one.",
+            "Always produce a tailoring report.",
+        )
+        path.write_text(content, encoding="utf-8")
+        result = self.run_preflight(fixture)
+        self.assert_rejected(result, "a live skill without report opt-in")
+
+    def test_rejects_report_schema_without_opt_in_boundary(self) -> None:
+        fixture = self.make_fixture()
+        path = fixture / ".agents/skills/resume-tailor/references/tailoring-report-schema.md"
+        content = path.read_text(encoding="utf-8").replace(
+            "Use this schema only when the user explicitly requests a tailoring report.",
+            "Use this schema for every tailoring run.",
+        )
+        path.write_text(content, encoding="utf-8")
+        result = self.run_preflight(fixture)
+        self.assert_rejected(result, "a report schema without its opt-in boundary")
 
 
 if __name__ == "__main__":

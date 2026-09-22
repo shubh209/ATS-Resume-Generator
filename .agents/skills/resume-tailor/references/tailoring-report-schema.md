@@ -1,5 +1,7 @@
 # Tailoring report schema
 
+> Use this schema only when the user explicitly requests a tailoring report. Never append it to a default tailoring response.
+
 Use these headings in this order.
 
 ## Target

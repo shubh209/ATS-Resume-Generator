@@ -31,6 +31,18 @@ REQUIRED_REFERENCE_HEADINGS = {
     ),
 }
 
+REQUIRED_CONTRACT_TEXT = {
+    ".agents/skills/resume-tailor/SKILL.md": (
+        "resume-system/reference/hiring-reality.md",
+        "resume-system/reference/qualification-taxonomy.md",
+        "Do not produce a tailoring report unless the user explicitly requests one.",
+        "Write `tailoring-report.md` only when the user explicitly requests a tailoring report.",
+    ),
+    ".agents/skills/resume-tailor/references/tailoring-report-schema.md": (
+        "Use this schema only when the user explicitly requests a tailoring report.",
+    ),
+}
+
 LANES = {
     "full-stack": "resume-system/templates/variants/fullstack-engineer.tex",
     "backend": "resume-system/templates/variants/backend-engineer.tex",
@@ -269,6 +281,16 @@ def main() -> int:
         for heading in headings:
             if heading not in content:
                 errors.append(f"{relative} missing required heading: {heading}")
+
+    for relative, snippets in REQUIRED_CONTRACT_TEXT.items():
+        path = root / relative
+        if not path.is_file():
+            errors.append(f"missing required file: {relative}")
+            continue
+        content = path.read_text(encoding="utf-8")
+        for snippet in snippets:
+            if snippet not in content:
+                errors.append(f"{relative} missing required contract text: {snippet}")
 
     project_files = sorted((root / "resume-system/facts/projects").glob("*.md"))
     if not project_files:
