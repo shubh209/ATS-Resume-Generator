@@ -12,6 +12,10 @@ The user does not read decision reports or process metadata. Return only the del
 - Do NOT print the recipient-type/angle/evidence/omitted metadata block, evidence-ranking notes, or draft alternatives.
 - Still apply the channel playbook and communication standard internally, and still verify counts with a tool before returning.
 
+## Delivery format
+- Deliver anything the user copies into a text field (emails, LinkedIn notes, application answers, cover letters) as plain text, NOT inside a markdown code block. Code blocks render with a background that carries into the paste and is hard to remove.
+- Use code blocks only for things pasted into a file or terminal: the `resume.tex` LaTeX, source code, and shell commands.
+
 ## Fixes
 - When the user asks to fix something, return only the updated section (the changed bullet, the changed skills line, the changed answer, or the changed note), not the whole document again.
 

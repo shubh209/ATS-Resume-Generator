@@ -121,6 +121,17 @@ The output should sound like something Shubh could type or say without rehearsal
 
 Avoid generic praise, inflated significance, corporate jargon, JD mimicry, forced rule-of-three lists, ceremonial openings, and conclusions that merely restate fit.
 
+## Experience over inventory
+
+Applies to every generated deliverable: application answers, cover letters, outreach, and connection notes.
+
+- Lead with one concrete, relevant thing Shubh actually did, told as a short story with a challenge and outcome, not a list of technologies. Experience that shows facing and overcoming a problem beats a capability inventory.
+- Open with the problem or the real-world observation, then the approach, then the outcome. Do NOT open with the technical mechanics of what the system does (what it extracts, retrieves, or calls). Mechanics come after the reader knows why the work mattered. A first sentence that starts with "I built an X that does A, B, C" is the wrong order; recast it to start with the problem that made the work worth doing. This is a recurring failure mode to catch on every draft.
+- Do not present a bolded or comma-separated tech-stack list (languages, frameworks, databases) as the case for Shubh. A keyword pile reads like every other applicant and is the opposite of standing out. Name a technology only inside a specific accomplishment where it explains a decision.
+- Claim only credentials, skills, and specializations the role actually calls for. An impressive but unrequested credential (a certification the posting never mentions) reads as padding and can actively sink the application. Match the claim to the stated need.
+- A specific, genuine, even unusual human story that shows resourcefulness can outperform a prestige signal. This is strongest for startup and founder-direct outreach, where standing out matters most; weight it down for large-company ATS or formal processes where a plain, keyword-legible answer is safer. Never invent the story; use it only when it is real and Shubh can defend it.
+- End outreach with the direct ask when there is one ("I'd like to interview for X"), rather than a ceremonial closing.
+
 ## Final rejection pass
 
 Reject and rewrite if any answer is yes:
@@ -132,8 +143,9 @@ Reject and rewrite if any answer is yes:
 5. Could the company or recipient name be swapped with little change?
 6. Does it delay the answer or intended point?
 7. Does it contain generic praise, invented motivation, or AI-sounding filler?
-8. Is more than one main angle competing for attention?
-9. Would Shubh struggle to explain or defend a sentence in conversation?
-10. Does it violate the channel's length, structure, or output contract?
+8. Does it lean on a tech-stack keyword list instead of a concrete accomplishment, or claim a credential the role never asked for?
+9. Is more than one main angle competing for attention?
+10. Would Shubh struggle to explain or defend a sentence in conversation?
+11. Does it violate the channel's length, structure, or output contract?
 
 The output is complete only when it passes truth, judgment, standalone clarity, voice, and channel contract checks.
