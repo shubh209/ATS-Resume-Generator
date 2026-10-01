@@ -8,7 +8,7 @@ Outreach copy for LinkedIn, email, and follow-ups.
 |------|---------|
 | [`career-tools/linkedin/linkedin-connection-note.md`](../linkedin/linkedin-connection-note.md) | Full rules: 300 chars, 3 lines, `network` / `ask` / `referral` |
 | [`career-tools/linkedin/candidate-profile.md`](../linkedin/candidate-profile.md) | Metrics and project picks (synced from `resume-system/facts/`) |
-| [`.cursor/skills/linkedin-connection-note/SKILL.md`](../../.cursor/skills/linkedin-connection-note/SKILL.md) | Cursor skill — invoke when drafting a connection note |
+| [`.agents/skills/linkedin-connection-note/SKILL.md`](../../.agents/skills/linkedin-connection-note/SKILL.md) | Skill — invoke when drafting a connection note |
 
 **Input template:**
 

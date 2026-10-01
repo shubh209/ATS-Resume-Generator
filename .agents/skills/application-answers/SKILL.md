@@ -18,7 +18,8 @@ Write one direct, paste-ready final answer per question. The standard input is t
 3. Read `resume-system/governance/FACT_RULES.md`.
 4. Read `resume-system/facts/work-experience.md`.
 5. Read the current selectable project masters under `resume-system/facts/projects/`.
-6. Read `career-tools/reference/humanizer.md` and apply it internally.
+6. Read `career-tools/reference/candidate-voice.md` for Shubh's real motivations and voice.
+7. Read `career-tools/reference/humanizer.md` and apply it internally.
 
 ## Execute
 

@@ -3,7 +3,7 @@
 > **LinkedIn connection notes (300 chars, 3 lines):** use the dedicated workflow instead of Script #3 here.  
 > - Prompt: `career-tools/linkedin/linkedin-connection-note.md`  
 > - Truth / metrics: `career-tools/linkedin/candidate-profile.md`  
-> - Cursor: `.cursor/skills/linkedin-connection-note/SKILL.md`
+> - Skill: `.agents/skills/linkedin-connection-note/SKILL.md`
 
 ---
 

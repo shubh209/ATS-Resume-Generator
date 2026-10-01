@@ -27,7 +27,7 @@ Thanks!
 **Use when:** First contact, no prior relationship
 
 > **Use the dedicated prompt:** `career-tools/linkedin/linkedin-connection-note.md`  
-> Intents: `network` | `ask` | `referral` (paste JD for referral). Cursor skill: `.cursor/skills/linkedin-connection-note/SKILL.md`
+> Intents: `network` | `ask` | `referral` (paste JD for referral). Skill: `.agents/skills/linkedin-connection-note/SKILL.md`
 
 **Structure:**
 - Line 1 — Who Shubh is (tie background to their role at Company)

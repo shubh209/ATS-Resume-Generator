@@ -22,9 +22,10 @@ Read, in order:
 2. `resume-system/governance/FACT_RULES.md`
 3. `resume-system/facts/work-experience.md`
 4. Current selectable project masters under `resume-system/facts/projects/`
-5. `career-tools/reference/humanizer.md`
+5. `career-tools/reference/candidate-voice.md` for Shubh's real motivations and voice
+6. `career-tools/reference/humanizer.md`
 
-Use only current, non-superseded facts and wording. Apply the humanizer internally and return only final answers.
+Use only current, non-superseded facts and wording. Facts come from the fact files; motivation and voice come from `candidate-voice.md`. Apply the humanizer internally and return only final answers.
 
 ## Read the JD
 
@@ -52,17 +53,20 @@ Before selecting evidence, identify what the question is evaluating:
 | Behavioral | Brief context, Shubh's action, and the result |
 | Personal or preference | Shubh's actual answer, not an inference |
 
-Answer the literal question in the first sentence. Do not begin with background that makes the reviewer wait for the answer.
+Answer early. Do not begin with background that makes the reviewer wait for the answer. But "early" is not "an identical first sentence every time" — vary the opening across an application so the answers do not read as stamped from one mold. Sometimes the direct answer leads; sometimes one short line of real context leads and the answer lands in the second sentence. Keep it tight either way. Uniform structure across every answer is itself a reject condition (see Reject and rewrite); answering early and sounding varied are both required, not in competition.
 
 ## Evidence selection
 
 Use one evidence unit by default. An evidence unit is one role, project, or verified fact that can support the complete answer.
 
-Add a second unit only when:
+Add a second unit when it genuinely adds a dimension the answer needs — not as something to avoid. This is a judgment call, and it is deliberately left to the writer's discretion rather than locked. Reach for a second unit when:
 
 - the question explicitly asks for multiple dimensions;
 - one fact proves technical fit and the other proves a separately requested working style;
-- `Tell us about yourself` needs one work thread and one technical direction.
+- `Tell us about yourself` needs one work thread and one technical direction;
+- a single unit answers correctly but a second genuinely makes the answer richer or shows range the role rewards.
+
+Still stop at two, and still cut a second unit that only pads. One is the default; two is allowed on judgment.
 
 Do not combine unrelated details into a fictional story. Do not use every matching project. Across several questions, choose different stories when they answer equally well so the application does not sound copied.
 
@@ -83,15 +87,17 @@ A limit stated by the portal or question overrides these defaults. Use one parag
 
 ## Question strategies
 
+A recurring recruiter framework for these answers is **role fit → proof → why now**: which stated duty Shubh matches, one concrete result as proof, and the honest timing reason. The "why now" slot is optional and only used when it is genuinely strong — for an early-career candidate it often is (graduating and wanting to go deep on this kind of work from the start). Never pad an answer to force all three; add "why now" only when it adds a real reason, not filler. (Framework per [hireflow](https://hireflow.net/blog/why-are-you-applying-for-this-job-2026); content rephrased for compliance.)
+
 ### Why this company?
 
-Name one concrete product, problem, customer, or responsibility from the JD. Connect it to verified experience or the kind of work Shubh wants to continue. Do not repeat a mission statement or invent personal passion for an ordinary business.
+Name one concrete product, problem, customer, or responsibility from the JD. Connect it to verified experience or the kind of work Shubh wants to continue. Optionally close on an honest "why now" when it strengthens the answer. Do not repeat a mission statement or invent personal passion for an ordinary business.
 
-The company name must not be swappable without changing the answer.
+The company name must not be swappable without changing the answer. A swappable, internet-sounding answer is the single biggest red flag recruiters cite, and is increasingly read as an AI-written tell — specificity is what clears it. (Per [aiapply](https://blog.aiapply.co/blog/why-do-you-want-to-work-here) and [jobwizard](https://jobwizard.ai/blog/how-to-answer-greenhouse-custom-application-questions-without-sounding-generic); rephrased for compliance.)
 
 ### Why are you a good fit?
 
-Lead with the strongest important requirement Shubh meets. Prove it with one example, then explain what that experience would let him contribute. Do not list every matching technology.
+Lead with the strongest important requirement Shubh meets. Prove it with one example, then explain what that experience would let him contribute, and optionally why the timing fits. Do not list every matching technology. When a JD names the traits or attributes it values, reflect those with evidence rather than copied phrasing: Greenhouse answers are human-scored against predefined focus attributes, so matching a stated attribute with proof is rewarded, while phrase-mimicry is not. (Scorecard mechanics per [loopcv](https://blog.loopcv.pro/greenhouse-application-tips/) and [jobscan](https://www.jobscan.co/blog/greenhouse-ats-what-job-seekers-need-to-know/); rephrased for compliance.)
 
 ### Tell us about yourself
 
@@ -155,11 +161,21 @@ Ask only when the question requires an unstored personal answer or when the JD i
 
 Do not ask which project to use, which lane applies, or whether to include a metric. Make those decisions using the shared standard.
 
+### Motivation questions — ask for the real reason, then record it
+
+For a motivation question ("why this company", "why this role", "what excites you about this"), a synthesized reason anchored only to the JD is the weakest kind of answer. Before synthesizing one:
+
+1. Read `career-tools/reference/candidate-voice.md` and check whether Shubh's real motivation for this kind of work is already recorded. If a recorded motivation fits, use it as the backbone and anchor it to the specific company or responsibility in the JD. Do not ask.
+2. If nothing recorded fits, ask Shubh one short question for his real reason before writing the answer, rather than manufacturing enthusiasm. This is the one approved exception to "do not ask for motivation."
+3. When Shubh answers, record his reason in `candidate-voice.md` (faithfully, not embellished) so the same question is not asked again. The asking is a bootstrap that retires itself as the file fills.
+
+This exception is only for genuine motivation. Lane, project, and metric decisions are still never asked.
+
 ## Reject and rewrite
 
 Reject an answer when:
 
-- it does not answer the literal question in the first sentence;
+- it buries the answer behind background instead of answering early (answering early does not require an identical first sentence; see Read the question);
 - the company name could be swapped without meaningful changes;
 - it repeats the JD without adding verified evidence;
 - several projects compete for attention;
@@ -168,7 +184,7 @@ Reject an answer when:
 - a "be specific" prompt is answered generically, or a broad prompt is answered with a seed that could be reused for any company;
 - it manufactures excitement for a research area or specialty Shubh cannot defend, instead of anchoring to the product or platform angle he can;
 - it upgrades prototype, design, ownership, or scale;
-- Shubh would struggle to say or defend it naturally;
+- it is not what Shubh would actually say in a recruiter screen — the written answer and the spoken answer must be the same person, because the real test is defending it in the follow-up conversation, not the words on the page (per [leonstaff](https://leonstaff.com/blogs/why-ai-generated-resumes-fail-interviews/) and [visualcv](https://www.visualcv.com/blog/ai-generated-resumes-software-engineers-reddit/); rephrased for compliance);
 - several answers reuse the same story without need;
 - it violates the stated or default limit.
 

@@ -55,6 +55,39 @@ A shortened bullet is complete only when its ending still answers **why the work
 
 ---
 
+## Bullet rewriting
+
+Applies whenever the user asks to reword, rewrite, edit, smooth, or improve a bullet (as opposed to selecting locked bullets verbatim during a live tailoring run). Rewriting is a master-maintenance-style action and is never done to locked bullets during live tailoring.
+
+**Preserve, without exception:**
+
+- Every metric, number, and `\metric{}` value, unchanged.
+- Every employment fact: company, title, dates, location, stack actually used.
+- The business / "why it mattered" clause. This is the most-reverted mistake in this repo's history: a reworded bullet that keeps the jargon and drops the reason is a regression, not an edit. If the original ends on a real outcome or intended purpose, the rewrite ends on that same meaning.
+
+**Voice and quality bar:**
+
+- The bullet must read as **one smooth sentence**, not fragments glued together. If it sounds like clauses were concatenated, it fails.
+- Match the register of the surrounding bullets — same seniority, same level of plainness. A rewritten bullet should not stand out in tone.
+- No soft, vague, or childish phrasing. Banned patterns include "could never corrupt," "so nothing ever breaks," "making everything better," and similar hand-wavy outcomes. State the mechanism and the real consequence instead (e.g. "every update either fully applied or rolled back, keeping reconciliation numbers trustworthy").
+- Lead with the technical build, carry the reason to the end. Do not front-load the outcome and strand the mechanics.
+- Meaning over wording: preserve what the bullet actually says. Reword to improve clarity and flow, not to insert JD keywords that change or inflate the claim.
+
+**Done test:** the rewrite preserves every fact and the business reason, reads as one natural sentence, and matches the tone of its neighbors. If any of those fail, it is not finished.
+
+---
+
+## Prototype intended-purpose framing
+
+Experience bullets and project bullets carry different truth-framing, and the distinction is a rule, not a judgment call:
+
+- **Experience bullets** (DAS, ASU, eInfochips) close on a **real business or system outcome** that actually happened for real users or stakeholders.
+- **Project bullets** (portfolio prototypes with no real users) close on **intended purpose** using language such as `designed to` or `built to`. They must not imply adoption, customers, or realized impact that did not occur.
+
+Never write "helped users do X," "so customers could Y," or any user-facing outcome for a prototype project. The candidate has no users for these projects; do not invent one. State what the system was built to do, not what users did with it.
+
+---
+
 ## Technology claims
 
 ### Project bullets — hard rule
