@@ -66,6 +66,11 @@ Use the first matching rule:
 
 Record the selected lane and the rule that selected it. Keep base templates intact; apply approved functional titles from `work-experience.md` in the tailored copy according to the JD emphasis. For AI roles, use only supported original/Backend/Full Stack titles for DAS and eInfochips; do not infer AI employment.
 
+**Titles mirror the JD's own role title, not the duties or the routing lane:**
+
+- **Header title (role under the candidate's name):** the exact role title the JD names, verbatim (e.g. "Software Development Engineer 1", "Associate Software Engineer"). If the JD names no clean role title, fall back to the lane name (Full Stack Software Engineer, Backend Software Engineer, AI Software Engineer).
+- **Employment titles (DAS, eInfochips):** mirror the JD title's family using the `work-experience.md` variant table. If the JD title says Backend → Backend Engineer; Full Stack → Full Stack Engineer; a plain Software Engineer / SDE title → the SE/SDE form matching the JD's wording ("Software Engineer" and "Software Development Engineer" are equivalent; use the JD's word). Retain Intern and volunteer status; never relabel non-AI employment as AI Engineer.
+
 ## Extract the JD priorities
 
 Extract exactly three priority signals:

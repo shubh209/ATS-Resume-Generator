@@ -4,12 +4,12 @@
 
 ## Approved resume title variants
 
-Original titles remain in the factual record. Select a functional title according to the verified work emphasized by the JD, without changing dates, status, or contribution level.
+Original titles remain in the factual record. Select the resume title to **mirror the JD's own role title family**, without changing dates, status, or contribution level. "Software Engineer" (SE) and "Software Development Engineer" (SDE) are equivalent — use whichever word the JD uses. If the JD title says Backend, use Backend; if Full Stack, use Full Stack; otherwise use the plain SE/SDE form matching the JD's wording.
 
 | Employer | Original title | Approved resume titles | Selection |
 |---|---|---|---|
-| Digital Aid Seattle | Software Engineer | Software Engineer; Backend Engineer; Full Stack Engineer | Backend or Full Stack when those duties are emphasized. Retain volunteer status. |
-| eInfochips | Software Engineer Intern | Software Engineer Intern; Backend Engineer Intern; Full Stack Engineer Intern | Backend or Full Stack when those duties are emphasized. Retain Intern. |
+| Digital Aid Seattle | Software Engineer | Software Engineer; Software Development Engineer; Backend Engineer; Full Stack Engineer | Match the JD title's family: Backend/Full Stack when the JD title uses it, else SE/SDE matching the JD's wording. Retain volunteer status. |
+| eInfochips | Software Engineer Intern | Software Engineer Intern; Software Development Engineer Intern; Backend Engineer Intern; Full Stack Engineer Intern | Match the JD title's family: Backend/Full Stack when the JD title uses it, else SE/SDE Intern matching the JD's wording. Retain Intern. |
 | ASU | Data Management Intern | Data Management Intern; Data Analyst Intern | Data Analyst Intern when analysis is relevant, including AI roles emphasizing analysis. Does not imply AI model development. |
 
 The banks below are factual and structural baselines built around common lane terminology. Application-copy wording follows `FACT_RULES.md` → JD terminology and visibility; source master wording is not edited during tailoring. This rule supersedes verbatim-only instructions in the existing banks.

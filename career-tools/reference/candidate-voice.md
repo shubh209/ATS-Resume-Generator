@@ -32,6 +32,7 @@ Genuinely values building software that serves real people and a social-good mis
 
 ### What he wants to grow into
 <!-- Honest career direction in his words. -->
+Does not want to specialize into one corner this early — wants breadth, to touch many different parts of a product. Draws energy from technical variety: a role spanning several genuinely different problem areas (e.g. social layer + real-time systems + payments/compliance) appeals more than depth in one. Comfortable being immediately useful in his strong area (payments/data work) while being stretched by the unfamiliar ones. (Recorded from Pure application, Sept 2026.)
 
 ### Frontier labs / why a top AI company
 Wants to experience what building at a frontier lab actually feels like. Specifically drawn to the tension of shipping new features while keeping the existing product's quality from slipping — how a team moves fast on new functionality without degrading what millions of users already rely on. Wants to learn how that balance is done at scale, early in his career while he can absorb the way of working. (Recorded from ElevenLabs application, Sept 2026.)
