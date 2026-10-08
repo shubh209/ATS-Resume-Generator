@@ -42,13 +42,13 @@ None found.
 
 ### Categories to check
 
-**FACT** — claim or metric not in master context; REJECT row used in LaTeX; prototype framed as production
+**FACT** — claim or metric not in master context; REJECT row used in LaTeX; prototype framed as production; title outside approved variants; internship/volunteer status misrepresented; rewording expands contribution, seniority, scope, scale, or outcome
 
-**KEYWORD** — tech in project bullet not in project MD; skill not in master list
+**KEYWORD** — tech in project bullet not in project MD; skill not in master list; important supported JD terminology omitted without a context/space reason; Skills-only wording offered as proof of a responsibility
 
 **CONTRACT** — missing complete tailored LaTeX resume; a requested tailoring report that omits its required schema sections; Validation Summary when not requested; full template output
 
-**BULLET** — missing Why; tool-led internship bullet; em dash or hyphen in bullet; missing What/How/Where/Why
+**BULLET** — missing, weakened, or genericized baseline business reason; tool-led internship bullet; em dash or hyphen in bullet; missing What/How/Where/Why
 
 **PAGE** — likely over 1 page; trim ladder not followed
 

@@ -1,6 +1,6 @@
 ---
 name: resume-tailor
-description: Tailor Shubh Kapadia's resume when the user asks to tailor, match, optimize, or adapt a resume to a job description, or supplies a JD for a Full Stack, Backend, AI Engineer, or general Software Engineer application. Produces a deterministic application copy from locked facts and lane templates. Do not use for interview preparation or for adding new experience facts.
+description: Tailor Shubh Kapadia's resume when the user asks to tailor, match, optimize, or adapt a resume to a job description, or supplies a JD for a Full Stack, Backend, AI Engineer, or general Software Engineer application. Produces a deterministic application copy from verified baseline facts and lane templates. Do not use for interview preparation or for adding new experience facts.
 ---
 
 # Deterministic Resume Tailor
@@ -12,8 +12,8 @@ Use this workflow for every live JD-tailoring request in this repository.
 Apply instructions in this order:
 
 1. The user's current explicit instructions
-2. This skill
-3. `resume-system/governance/FACT_RULES.md`
+2. `resume-system/governance/FACT_RULES.md`
+3. This skill
 4. Locked bullets and facts in `resume-system/facts/work-experience.md` and `resume-system/facts/projects/*.md`
 5. The selected lane template
 
@@ -64,7 +64,7 @@ Use the first matching rule:
 | Title or required work centers on APIs, services, databases, platforms, distributed systems, infrastructure, or backend development | Backend | `resume-system/templates/variants/backend-engineer.tex` |
 | General Software Engineer posting spans frontend and backend without a dominant specialty | Full Stack | `resume-system/templates/variants/fullstack-engineer.tex` |
 
-Record the selected lane and the rule that selected it.
+Record the selected lane and the rule that selected it. Keep base templates intact; apply approved functional titles from `work-experience.md` in the tailored copy according to the JD emphasis. For AI roles, use only supported original/Backend/Full Stack titles for DAS and eInfochips; do not infer AI employment.
 
 ## Extract the JD priorities
 
@@ -75,22 +75,22 @@ Extract exactly three priority signals:
 3. Use preferred qualifications only as a tiebreaker.
 4. Ignore benefits, culture statements, generic enthusiasm, and unsupported wish-list tools.
 
-Preserve the exact JD wording in the tailoring report. Do not copy phrases unnaturally into locked bullets.
+Preserve the exact JD wording internally and in a tailoring report when requested. Apply the JD terminology and visibility rules in `FACT_RULES.md` to baseline bullets.
 
 Classify relevant requirements internally as eligibility, technology, responsibility, collaboration, or optional tooling. Use the role profiles as vocabulary and tie-breaking context, never as authority for a candidate claim.
 
-Place the strongest truthful evidence for the three priorities as early as the locked lane structure permits. Give special weight to the first bullet of the most recent relevant role. Do not change locked wording to force placement.
+Place the strongest truthful evidence for the three priorities as early as the locked lane structure permits. Give special weight to the first bullet of the most recent relevant role. Keep the underlying contribution and business reason intact when adapting wording.
 
 ## Work experience
 
-Use the approved bullet bank in `resume-system/facts/work-experience.md`.
+Use the approved bullet bank in `resume-system/facts/work-experience.md`. Existing “locked” or “verbatim” wording instructions in masters apply to their source text; FACT_RULES authorizes faithful edits in the application copy.
 
 - For the AI Engineer lane, use exactly three DAS AI-supporting bullets, the first two ASU shared bullets, and the first two eInfochips AI-supporting bullets. Preserve that role order and each role's master bullet order.
 - For Full Stack and Backend lanes, eInfochips has exactly three bullets from the selected lane set; reorder those three by the JD priorities.
 - For Full Stack and Backend lanes, ASU uses all three locked shared bullets in master order.
-- Preserve locked wording verbatim.
-- Preserve official title, company, location, and dates.
-- Use only locked bullets for other roles. Preserve wording unless the user is performing a separate master-maintenance task.
+- Adapt baseline wording only under `FACT_RULES.md` → JD terminology and visibility.
+- Preserve company, location, dates, status, and seniority; use only approved title variants.
+- Use only baseline bullets for other roles, with evidence-backed application-copy edits under the same rules.
 - Never pull resume claims from `career-stories/**` or `_drafts/**`.
 - If the user explicitly asks to shorten or rewrite a bullet, follow `Bullet compression` in `resume-system/governance/FACT_RULES.md`; preserve its reason and cut lower-value technical detail first.
 
@@ -122,7 +122,7 @@ Tie-break in this fixed order:
 
 - For the AI Engineer lane, keep Video Compliance Pipeline first with its three locked bullets. Select three additional projects by score and use two locked bullets for each, producing four projects with `3 / 2 / 2 / 2` bullets. Preserve the locked Projects-before-Experience section order.
 - For Full Stack and Backend lanes, select exactly three projects and use `3 / 3 / 2` bullets by rank.
-- Select locked project bullets verbatim and reorder them only when the lane rule permits it. A missing requirement remains a gap; wording cannot convert ADJACENT evidence into DIRECT evidence.
+- Select baseline project bullets, adapt wording under FACT_RULES, and reorder them only when the lane rule permits it. A missing requirement remains a gap; wording cannot convert ADJACENT evidence into DIRECT evidence.
 
 ## Skills
 
@@ -135,13 +135,23 @@ Use only skills documented as actually used in current `resume-system/facts/work
 - Never add a requested technology that lacks verified evidence.
 - A metric may use documented evidence outside this workspace when its current master records the source and classifies it as measured or estimated. Do not imply that the evidence was reverified during a tailoring run.
 
+## Keyword visibility and recurring gaps
+
+Before completion, check important required/core JD terms, then useful preferred terms, against verified evidence and the final resume. Record internally: exact JD term, evidence source, supported/omitted/unverified status, and final location. Surface omitted supported terms through faithful bullet wording or verified Skills entries. Responsibilities require contextual evidence; a Skills entry alone is not proof. Check every changed bullet still ends with its specific reason.
+
+Read and update `resume-system/reference/keyword-gaps.md` for unverified terms in the supplied JD. Store only term, distinct JD identifiers, requirement level, evidence status, and a concrete verification/learning next step. A JD identifier uses company + role + source URL when supplied, otherwise a stable identifier of the supplied text. Reprocessing the same JD must not increase frequency. Keep literal terminology and group genuine equivalents; related tools remain separate. Distinguish missing evidence from a confirmed skill gap.
+
+Flag recurrence after two distinct JDs, with a concise notice when a term first crosses that threshold or its evidence status changes; do not repeat unchanged notices. Keep the tally separate from the fit score. Do not invent historical counts or save complete JDs for tracking. This persistent ledger is authorized system tracking, not a saved resume deliverable.
+
+AI terminology absent from masters remains unverified until user-authorized inspection of named project repositories supplies concrete implementation evidence and master maintenance records it. Ask for repository paths when missing; continue tailoring from current evidence rather than assuming framework features were implemented.
+
 ## Output
 
 Default: return only the complete tailored `resume.tex`, or only the specifically requested answer when the request is narrower than a resume.
 
-Do not produce a tailoring report unless the user explicitly requests one. Do not append a selection table, fact-check table, gaps table, validation summary, or ATS explanation to the default response. Report an actual blocker, failed invariant, or material fact-integrity warning when necessary.
+Do not produce a tailoring report unless the user explicitly requests one. Do not append a selection table, fact-check table, gaps table, validation summary, or ATS explanation to the default response. The concise recurring-keyword notice above is an authorized output exception. Report an actual blocker, failed invariant, or material fact-integrity warning when necessary.
 
-Do not create or edit any file during a live run unless the user explicitly asks you to store it.
+Do not save deliverables during a live run unless explicitly requested. Update only the keyword-gap ledger as authorized above.
 
 When the user explicitly asks to save the output, write only these files into `resume-system/output/YYYY-MM-DD-company-role/` (gitignored scratch), using lowercase kebab-case for company and role:
 
@@ -151,13 +161,15 @@ When the user explicitly asks to save the output, write only these files into `r
 - Always write `job-description.md` and `resume.tex`.
 - Write `tailoring-report.md` only when the user explicitly requests a tailoring report.
 
-Update an existing same-JD directory in place only when its artifact set matches the current request. If a same-JD directory's artifact set differs from the current request, allocate the next `-v2`, `-v3`, and so on directory rather than deleting or leaving a stale report. A default saved run must end with exactly `job-description.md` and `resume.tex` in its selected output directory. An explicit-report saved run must end with those two files plus `tailoring-report.md`. For a different JD, append `-v2`, then `-v3`. Do not delete old output directories or reports. These are the only files a live run may create. Master files under `resume-system/` are never modified by a tailoring run.
+Update an existing same-JD directory in place only when its artifact set matches the current request. If a same-JD directory's artifact set differs from the current request, allocate the next `-v2`, `-v3`, and so on directory rather than deleting or leaving a stale report. A default saved run must end with exactly `job-description.md` and `resume.tex` in its selected output directory. An explicit-report saved run must end with those two files plus `tailoring-report.md`. For a different JD, append `-v2`, then `-v3`. Do not delete old output directories or reports. These are the only deliverable files a live run may create; the keyword-gap ledger is separate system tracking. Master files under `resume-system/` are never modified by a tailoring run.
 
 ## Allowed resume changes
 
 In the tailored copy, change only:
 
 - Header target title
+- Approved functional employment titles
+- Evidence-backed terminology and clarity edits to selected baseline bullets under FACT_RULES
 - Order of approved work-experience bullets
 - Selected projects and their order
 - Selected locked project bullets and their order
@@ -165,7 +177,7 @@ In the tailored copy, change only:
 - Skills item order
 - Removal of irrelevant skills when needed for one page
 
-Preserve the LaTeX preamble, commands, section order, education, contact details, employment facts, locked bullet wording, metrics, and URLs.
+Preserve the LaTeX preamble, commands, section order, education, contact details, employment facts except approved title variants, baseline claim meaning and business reasons, metrics, and URLs.
 
 ## Validation
 
@@ -178,8 +190,8 @@ Before completion:
 5. Confirm the project structure: AI uses four projects with `3 / 2 / 2 / 2`; Full Stack and Backend use three projects with `3 / 3 / 2`.
 6. Trace every metric and material claim to its master source.
 7. Confirm no REJECT claim entered the resume.
-8. Confirm gaps were reported rather than disguised.
-9. Confirm master files have not been modified by this run.
+8. Confirm unsupported terms remained gaps rather than being disguised; surface recurring gaps under the tracking/output rules.
+9. Confirm fact masters and templates have not been modified by this run. The keyword-gap ledger is the sole authorized tracking exception.
 10. Compile the tailored copy when a LaTeX engine is available and the output was saved to a file.
 11. If compilation is unavailable, record `Layout validation: NOT RUN — LaTeX engine unavailable`; never claim the resume is one page.
 

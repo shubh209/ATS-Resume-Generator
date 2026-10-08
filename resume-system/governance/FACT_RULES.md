@@ -6,7 +6,7 @@
 
 ## Hierarchy
 
-1. **Locked resume bullets** in `resume-system/facts/projects/*.md` and `resume-system/facts/work-experience.md` — facts and wording are fixed during live tailoring; wording changes only in explicitly authorized master maintenance
+1. **Baseline resume bullets** (including banks headed “Locked Resume Bullets”) in `resume-system/facts/projects/*.md` and `resume-system/facts/work-experience.md` — facts are fixed; application-copy wording may change under the JD terminology rules below. Master wording changes only during explicitly authorized master maintenance
 2. **Raw context / Verified Metrics / Metrics Ledger** in project MD, `resume-system/facts/work-experience.md`, and role master-story files in `career-stories/*.md` (e.g. `eInfochips.md`) — same authority as project MD
 3. **Never Claim** sections in project MD, `work-experience.md`, or `career-stories/*.md` (when present)
 4. **`resume-system/facts/per-project-keywords.md`** — role coverage reference only; does not authorize new facts
@@ -32,7 +32,7 @@ Both may appear in `\metric{}` when the current master records the measurement o
 
 | Allowed | Not allowed |
 |---------|-------------|
-| Select and reorder locked bullets verbatim | Change locked wording, stack, scale, or outcome facts during live tailoring |
+| Select and reorder baseline bullets; adapt application-copy wording under JD terminology rules | Change stack, scale, contribution, or outcome facts during live tailoring |
 | Emphasize JD-relevant tech you actually used | Add tech you only plan to use |
 | Drop irrelevant accomplishments | Invent accomplishments |
 
@@ -57,12 +57,12 @@ A shortened bullet is complete only when its ending still answers **why the work
 
 ## Bullet rewriting
 
-Applies whenever the user asks to reword, rewrite, edit, smooth, or improve a bullet (as opposed to selecting locked bullets verbatim during a live tailoring run). Rewriting is a master-maintenance-style action and is never done to locked bullets during live tailoring.
+Applies to explicit bullet edits and evidence-backed rewording of baseline bullets in a tailored application copy. Live tailoring leaves the source masters unchanged.
 
 **Preserve, without exception:**
 
 - Every metric, number, and `\metric{}` value, unchanged.
-- Every employment fact: company, title, dates, location, stack actually used.
+- Every employment fact: company, dates, location, status, stack actually used, and contribution level. Resume titles may use only the approved functional variants recorded in `work-experience.md`; retain original titles in the factual record and forms requesting official employment titles.
 - The business / "why it mattered" clause. This is the most-reverted mistake in this repo's history: a reworded bullet that keeps the jargon and drops the reason is a regression, not an edit. If the original ends on a real outcome or intended purpose, the rewrite ends on that same meaning.
 
 **Voice and quality bar:**
@@ -178,13 +178,19 @@ Design work and implementation work are different accomplishments and use differ
 
 ---
 
-## JD keyword honesty
+## JD terminology and visibility
 
-| Situation | Action |
-|-----------|--------|
-| JD requires keyword you have in master MD | Include in bullets or skills |
-| JD requires keyword you lack | Do **not** put in project bullets; do not stuff skills |
-| JD uses synonym you have | Mirror JD wording (e.g. RESTful API ↔ REST API) |
+Prioritize required qualifications and core responsibilities, followed by useful preferred terms. There is no keyword quota. Use the JD's exact terminology when verified evidence supports its meaning and it reads naturally in context.
+
+For each important term, distinguish **supported and visible**, **supported but omitted**, and **unverified**. Search visibility and qualification evidence are separate: verified tools may appear in Skills, while claimed responsibilities require contextual bullet evidence.
+
+Allowed application-copy edits include equivalent names, abbreviations, and descriptions of the same work (Postgres → PostgreSQL; REST API → RESTful API; spreadsheet validation → validation during data ingestion). Keep every edit traceable to a baseline bullet and verified context. A broader term requires evidence for its entire meaning: building API endpoints alone does not establish system architecture; using Docker does not establish Kubernetes; using LangGraph alone does not establish memory or recovery from failure.
+
+Preserve what/how/where/why, all numbers, the actual contribution and seniority, and prototype framing. End on the same specific business or system reason, or the same intended purpose for a prototype. Cut secondary implementation details before weakening that reason. Equivalent wording does not authorize new tools, scale, ownership, expertise, or outcomes.
+
+Approved functional titles are resume descriptions of verified duties, not claims that the employer formally assigned that title. Preserve internship and volunteer status. Choose among the role's recorded variants; AI Engineer applications do not authorize relabeling non-AI employment as AI Engineer.
+
+Unverified terms remain gaps. Investigating source code is a separate, user-authorized evidence-maintenance task: inspect named project repositories, record concrete implementation anchors and limitations in the relevant master, then tailor from that updated master. Plans, dependencies, generated claims, and framework capabilities alone do not prove implementation.
 
 ---
 

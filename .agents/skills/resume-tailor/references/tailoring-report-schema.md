@@ -25,12 +25,17 @@ Use these headings in this order.
 
 ## Experience order
 
-For every experience role, list bullet IDs or the first eight words of each locked bullet in final order.
+For every experience role, list bullet IDs or the first eight words of each baseline bullet in final order.
 
 ## Project selection
 
 | Rank | Project | Score | Match band | Bullet count | Source |
 |---|---|---:|---|---:|---|
+
+## Terminology and titles
+
+| Original wording/title | Application wording/title | Verified source | Business reason preserved |
+|---|---|---|---|
 
 ## Skills changes
 
@@ -60,10 +65,10 @@ Use MEASURED or ESTIMATE for metrics and OK or REJECT for status. An external ev
 ## Validation
 
 - Preflight:
-- Locked bullet integrity:
+- Baseline facts and business-reason integrity:
 - eInfochips bullet count:
 - Project count and distribution:
-- Master files unchanged:
+- Fact masters and templates unchanged:
 - LaTeX compilation:
 - Page count:
 - Overall result:

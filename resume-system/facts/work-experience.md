@@ -2,6 +2,20 @@
 
 ---
 
+## Approved resume title variants
+
+Original titles remain in the factual record. Select a functional title according to the verified work emphasized by the JD, without changing dates, status, or contribution level.
+
+| Employer | Original title | Approved resume titles | Selection |
+|---|---|---|---|
+| Digital Aid Seattle | Software Engineer | Software Engineer; Backend Engineer; Full Stack Engineer | Backend or Full Stack when those duties are emphasized. Retain volunteer status. |
+| eInfochips | Software Engineer Intern | Software Engineer Intern; Backend Engineer Intern; Full Stack Engineer Intern | Backend or Full Stack when those duties are emphasized. Retain Intern. |
+| ASU | Data Management Intern | Data Management Intern; Data Analyst Intern | Data Analyst Intern when analysis is relevant, including AI roles emphasizing analysis. Does not imply AI model development. |
+
+The banks below are factual and structural baselines built around common lane terminology. Application-copy wording follows `FACT_RULES.md` → JD terminology and visibility; source master wording is not edited during tailoring. This rule supersedes verbatim-only instructions in the existing banks.
+
+---
+
 ## Non-Technical Keyword Bank (JD reference)
 
 Common soft-skill qualifications from JDs. Live selection and ordering rules are in `.agents/skills/resume-tailor/SKILL.md`.

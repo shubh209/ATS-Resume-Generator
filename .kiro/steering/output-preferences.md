@@ -5,7 +5,7 @@ The user does not read decision reports or process metadata. Return only the del
 ## Resume tailoring
 - Return only the complete `resume.tex` LaTeX code.
 - Do NOT print the tailoring report, priorities list, project-selection table, skills-change list, gaps table, fact-check table, or validation section.
-- Still run the full resume-tailor workflow internally (preflight, lane routing, locked-bullet integrity, fact checks, verified counts). Just do not print the report.
+- Still run the full resume-tailor workflow internally (preflight, lane routing, baseline-fact and business-reason integrity, fact checks, verified counts). Just do not print the report.
 
 ## Application answers, LinkedIn connection notes, cover letters
 - Return only the final paste-ready copy, plus its verified count (`Words: N/limit` or `Characters: N/limit`).
@@ -21,6 +21,7 @@ The user does not read decision reports or process metadata. Return only the del
 
 ## Flags
 - Keep any honest gap or risk warning to one or two short lines, only when it is genuinely material. Do not expand it into a full warnings section.
+- Resume tailoring may append a concise recurring-unverified-keyword notice under the resume skill’s tracking rules. State the term, distinct-JD count, and whether evidence needs verification or the skill is a confirmed gap. Do not repeat unchanged notices. This is an explicit exception to deliverable-only output.
 
 ## What is unchanged
-- Truth, fact-sourcing, locked-bullet, and length rules still apply in full. This preference changes what is printed, never what is checked.
+- Truth, fact-sourcing, baseline-bullet, and length rules still apply in full. This preference changes what is printed, never what is checked.
