@@ -32,6 +32,7 @@ Confirmed behavioral defaults. Apply them without re-asking unless the user over
 5. **No stated length limit means choose the length** — shorter and tighter over hitting a ceiling.
 6. **"Fix this" returns only the changed section**, not the whole document. Do not re-verify resume page fit for a snippet-level fix.
 7. **`archive/` and `docs/superpowers/` are out of scope** — never read them for facts.
+8. **Ask before writing to the keyword-gaps ledger** (`resume-system/reference/keyword-gaps.md`). Reading it is fine; present the proposed entry or recurrence notice and write only after the user approves. This overrides any silent-write authorization in the resume-tailor skill.
 
 ## Layout
 
