@@ -1,6 +1,6 @@
 # Fit-scoring workflow for resume tailoring
 
-When the user asks to tailor a resume and score it (or says "score", "fit", "loop to 85"), run this alongside the resume-tailor skill. This governs the score only; all resume-tailor and FACT_RULES rules still apply in full.
+Run this on every resume-tailoring request by default, alongside the resume-tailor skill — the user does not need to say "score" or "fit." Always return the final `Fit: N%` with the delivered `resume.tex`. (The explicit triggers "score", "fit", "loop to 85" still apply but are no longer required.) This governs the score only; all resume-tailor and FACT_RULES rules still apply in full.
 
 ## What the score measures
 

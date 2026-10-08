@@ -8,7 +8,8 @@ This repo produces career deliverables from locked-fact masters. Each task below
 |---|---|
 | Tailor, match, optimize, or adapt a resume to a JD, or supplies a JD for resume work | `.agents/skills/resume-tailor/SKILL.md` |
 | A cover letter, application letter, or short tailored letter | `.agents/skills/cover-letter/SKILL.md` |
-| A LinkedIn connection note or outreach note from a person's profile | `.agents/skills/linkedin-connection-note/SKILL.md` |
+| YC or Wellfound startup application introductions (including Wellfound's company-interest field), founder/teammate LinkedIn connection notes tied to a startup opening, or company LinkedIn job messages | `.agents/skills/startup-job-messages/SKILL.md` |
+| A LinkedIn connection note or outreach note from a person's profile without startup job context | `.agents/skills/linkedin-connection-note/SKILL.md` |
 | Application / supplemental questions (Greenhouse, Lever, Workday, portals, fit, motivation, behavioral) | `.agents/skills/application-answers/SKILL.md` |
 
 Each skill is authoritative for its task. When a request spans two tasks (e.g. "tailor my resume and answer these questions"), run each matching skill in turn, not a blended improvisation.
@@ -34,4 +35,4 @@ Confirmed behavioral defaults. Apply them without re-asking unless the user over
 
 ## Layout
 
-All skills live under `.agents/skills/`: `resume-tailor`, `cover-letter`, `linkedin-connection-note`, `application-answers`. New skills go in the same directory and get a row in the task router above.
+All skills live under `.agents/skills/`: `resume-tailor`, `cover-letter`, `linkedin-connection-note`, `application-answers`, `startup-job-messages`. New skills go in the same directory and get a row in the task router above.

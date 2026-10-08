@@ -19,15 +19,22 @@ Shubh's genuine reasons for wanting certain kinds of work. Fill in his words; le
 
 ### AI / ML infrastructure
 <!-- His real reason, if any, for the AI-infra direction. -->
+Drawn to productizing AI into real systems that have actual users, rather than building AI demos that never ship. The part he finds hard and interesting is making the AI dependable enough to trust in production — reliability inside a product people depend on, not a blank-page prototype. Points to prior work building AI into real products (ad-compliance RAG + evaluation pipeline, Hearloop voice pipeline). This is the kind of work he keeps gravitating toward. (Recorded from NISC + Irys applications, Sept 2026.)
 
 ### Full stack / product engineering
 <!-- -->
+
+### Mission-driven / social-good work
+Genuinely values building software that serves real people and a social-good mission, not just shipping features. Defensible proof, not a talking point: he chose an unpaid volunteer engineering role at a nonprofit (Digital Aid Seattle) specifically to build things that help people while getting real-world experience. Use the DAS choice as the evidence when a role is mission-driven (nonprofit, benefits/healthcare for workers, public good). (Recorded from 32BJ Benefit Funds application, Sept 2026.)
 
 ### Company stage / size (startup vs large company)
 <!-- What he actually wants from the environment, if stated. -->
 
 ### What he wants to grow into
 <!-- Honest career direction in his words. -->
+
+### Frontier labs / why a top AI company
+Wants to experience what building at a frontier lab actually feels like. Specifically drawn to the tension of shipping new features while keeping the existing product's quality from slipping — how a team moves fast on new functionality without degrading what millions of users already rely on. Wants to learn how that balance is done at scale, early in his career while he can absorb the way of working. (Recorded from ElevenLabs application, Sept 2026.)
 
 ## Likes and dislikes (answer style)
 
