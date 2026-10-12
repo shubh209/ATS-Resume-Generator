@@ -16,7 +16,7 @@ Use the target JD for live priorities. Use this file only to map verified projec
 
 ## Recommended Resume Projects
 
-AI Engineer uses the locked projects-first structure with four projects and `3 / 2 / 2 / 2` bullets. Other lanes follow their own templates.
+AI Engineer uses the locked projects-first structure with four projects and `3 / 2 / 2 / 1` bullets (the fourth project uses one bullet). Other lanes use three projects at `3 / 2 / 2`. SKILL.md is authoritative for live counts; the per-project tables below show each project's available bullets, not the live-run count.
 
 ### Full Stack SWE
 

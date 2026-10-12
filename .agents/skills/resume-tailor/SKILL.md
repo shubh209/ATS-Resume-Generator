@@ -125,8 +125,8 @@ Tie-break in this fixed order:
 3. More of the three priority signals
 4. Alphabetical project name
 
-- For the AI Engineer lane, keep Video Compliance Pipeline first with its three locked bullets. Select three additional projects by score and use two locked bullets for each, producing four projects with `3 / 2 / 2 / 2` bullets. Preserve the locked Projects-before-Experience section order.
-- For Full Stack and Backend lanes, select exactly three projects and use `3 / 3 / 2` bullets by rank.
+- For the AI Engineer lane, keep Video Compliance Pipeline first with its three locked bullets. Select three additional projects by score and use `3 / 2 / 2 / 1` bullets (two for the next two by rank, one for the fourth), producing four projects. For the single-bullet fourth project, select its strongest JD-relevant locked bullet. Preserve the locked Projects-before-Experience section order.
+- For Full Stack and Backend lanes, select exactly three projects and use `3 / 2 / 2` bullets by rank.
 - Select baseline project bullets, adapt wording under FACT_RULES, and reorder them only when the lane rule permits it. A missing requirement remains a gap; wording cannot convert ADJACENT evidence into DIRECT evidence.
 
 ## Skills
@@ -192,7 +192,7 @@ Before completion:
 2. Confirm the correct lane template was copied.
 3. Confirm the selected lane's experience counts: AI uses DAS/ASU/eInfochips `3 / 2 / 2`; Full Stack and Backend retain their template-defined role counts.
 4. Confirm ASU bullets remain in master order.
-5. Confirm the project structure: AI uses four projects with `3 / 2 / 2 / 2`; Full Stack and Backend use three projects with `3 / 3 / 2`.
+5. Confirm the project structure: AI uses four projects with `3 / 2 / 2 / 1`; Full Stack and Backend use three projects with `3 / 2 / 2`.
 6. Trace every metric and material claim to its master source.
 7. Confirm no REJECT claim entered the resume.
 8. Confirm unsupported terms remained gaps rather than being disguised; surface recurring gaps under the tracking/output rules.
