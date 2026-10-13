@@ -440,9 +440,9 @@ def main() -> int:
                     "ai-engineer experience counts are "
                     f"{das_count}/{asu_count}/{count}; expected 3/2/2"
                 )
-            if counts != [3, 2, 2, 2]:
+            if counts != [3, 2, 2, 1]:
                 errors.append(
-                    f"ai-engineer project bullet distribution is {counts}; expected [3, 2, 2, 2]"
+                    f"ai-engineer project bullet distribution is {counts}; expected [3, 2, 2, 1]"
                 )
             project_at = content.find(r"\section{Projects}")
             experience_at = content.find(r"\section{Experience}")
@@ -453,9 +453,9 @@ def main() -> int:
                 )
         else:
             counts = item_counts(projects)
-            if counts != [3, 3, 2]:
+            if counts != [3, 2, 2]:
                 errors.append(
-                    f"{lane} project bullet distribution is {counts}; expected [3, 3, 2]"
+                    f"{lane} project bullet distribution is {counts}; expected [3, 2, 2]"
                 )
 
     if errors:

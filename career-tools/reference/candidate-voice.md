@@ -24,6 +24,9 @@ Drawn to productizing AI into real systems that have actual users, rather than b
 ### Full stack / product engineering
 <!-- -->
 
+### Physical / real-world stakes
+Drawn to software that has physical-world impact rather than just moving numbers on a screen. Example reason (Laminar): software that visibly cuts waste, water, and energy on real factory floors, so a well-built feature changes something in the physical world, not just a dashboard metric. Distinct from the generic mission-driven theme — this is specifically about tangible, physical outcomes vs. "another SaaS dashboard." (Recorded from Laminar application, Oct 2026.)
+
 ### Mission-driven / social-good work
 Genuinely values building software that serves real people and a social-good mission, not just shipping features. Defensible proof, not a talking point: he chose an unpaid volunteer engineering role at a nonprofit (Digital Aid Seattle) specifically to build things that help people while getting real-world experience. Use the DAS choice as the evidence when a role is mission-driven (nonprofit, benefits/healthcare for workers, public good). (Recorded from 32BJ Benefit Funds application, Sept 2026.)
 

@@ -35,6 +35,17 @@ Confirmed behavioral defaults. Apply them without re-asking unless the user over
 8. **Ask before writing to the keyword-gaps ledger** (`resume-system/reference/keyword-gaps.md`). Reading it is fine; present the proposed entry or recurrence notice and write only after the user approves. This overrides any silent-write authorization in the resume-tailor skill.
 9. **Titles mirror the JD's title, not the duties.** Header = the exact JD role title verbatim (e.g. "Software Development Engineer 1"); fall back to the lane name only if the JD names no clean title. DAS/eInfochips employment titles mirror the JD title's family: Backend/Full Stack when the JD title uses it, else the SE/SDE form matching the JD's wording ("Software Engineer" and "Software Development Engineer" are the same; use the JD's word). Retain Intern/volunteer status.
 
+## Pre-send checklist (run before returning ANY deliverable)
+
+Re-read the relevant skill/rule files for the task before producing output — do not run from memory. Then check the deliverable against every item below before sending. These are the mistakes that recur; a visible check beats recall.
+
+1. **Resume bullets follow What + How + Where + Why, in that order** — open on what was built and how (tech), give the context, and close on a plain, non-technical business/human reason. The Why is never dropped and never written as jargon. Leading with the Why is wrong; the Why closes the bullet.
+2. **Application answers are ≤120 words** (unless a portal states a limit) and in the candidate's recorded voice from `candidate-voice.md` — short, plain, human. "No stated limit" does NOT mean write long.
+3. **Header title = the exact JD role title, verbatim**; DAS/eInfochips employment titles mirror the JD title's family (Backend / Full Stack / SE = SDE), per Standing default 9.
+4. **Project and experience counts match the lane:** AI = 4 projects at 3/2/2/1 and experience 3/2/2; Full Stack & Backend = 3 projects at 3/2/2.
+5. **Every word/character count is verified with a tool**, never asserted from estimate.
+6. **No task-specific style instruction crosses tasks.** A style request given for an application answer (or any one task) never changes resume bullet wording; resume bullets always follow item 1 regardless of other instructions in the same message.
+
 ## Layout
 
 All skills live under `.agents/skills/`: `resume-tailor`, `cover-letter`, `linkedin-connection-note`, `application-answers`, `startup-job-messages`. New skills go in the same directory and get a row in the task router above.
