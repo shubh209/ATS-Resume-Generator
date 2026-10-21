@@ -21,6 +21,8 @@ Shubh's genuine reasons for wanting certain kinds of work. Fill in his words; le
 <!-- His real reason, if any, for the AI-infra direction. -->
 Drawn to productizing AI into real systems that have actual users, rather than building AI demos that never ship. The part he finds hard and interesting is making the AI dependable enough to trust in production — reliability inside a product people depend on, not a blank-page prototype. Points to prior work building AI into real products (ad-compliance RAG + evaluation pipeline, Hearloop voice pipeline). This is the kind of work he keeps gravitating toward. (Recorded from NISC + Irys applications, Sept 2026.)
 
+Separately, has genuine interest in the GPU-infrastructure / datacenter-economics domain (GPU cluster cost, cloud pricing, token economics). Defensible proof, not a talking point: he built ClusterOps, a GPU-cluster monitoring dashboard, on his own. Use ClusterOps as the evidence for roles about AI hardware, datacenters, or compute economics, and frame it as wanting to go deeper on that domain. (Recorded from SemiAnalysis AI TCO application, Oct 2026.)
+
 ### Full stack / product engineering
 <!-- -->
 

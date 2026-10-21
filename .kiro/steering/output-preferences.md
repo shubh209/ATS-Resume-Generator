@@ -2,6 +2,10 @@
 
 The user does not read decision reports or process metadata. Return only the deliverable.
 
+## No unrequested reports (hard rule)
+
+Unless the user explicitly asks for a report, do NOT generate one. This covers any explanation of lane routing, priorities, tailoring moves, project or bullet selection, alignment or keyword mapping, fit justification, or "here's what I changed and why" narrative. Do the reasoning internally and print only the deliverable and the items each section below allows (the `resume.tex` and `Fit: N%`; the paste-ready copy and its count; a one or two line material flag; an authorized keyword-gaps notice). A report appears only on an explicit request such as "explain", "why", "give me the report", or "walk me through it". When in doubt, leave it out.
+
 ## Resume tailoring
 - Return only the complete `resume.tex` LaTeX code.
 - Do NOT print the tailoring report, priorities list, project-selection table, skills-change list, gaps table, fact-check table, or validation section.

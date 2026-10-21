@@ -136,9 +136,23 @@ Use only skills documented as actually used in current `resume-system/facts/work
 - Reorder categories by the three JD priorities.
 - Reorder items inside each category by JD relevance.
 - Remove items with no useful relationship to the JD when space requires it.
-- Preserve exact technology names.
+- Preserve exact technology names, except mirror the JD's exact wording for a true equivalent of a skill the candidate verifiably has (see JD-wording mirroring below).
 - Never add a requested technology that lacks verified evidence.
 - A metric may use documented evidence outside this workspace when its current master records the source and classifies it as measured or estimated. Do not imply that the evidence was reverified during a tailoring run.
+
+### JD-wording mirroring in Skills (default, keep categories)
+
+Mirror the JD's exact required/core skill vocabulary in the Skills section on every tailoring run, to maximize literal ATS keyword-search visibility. This is Skills-only; bullets stay locked under the bullet rules above. Keep the template's existing categorized Skills lines — do not add a separate flat match line.
+
+Procedure:
+
+1. Extract the JD's exact required and core skill terms (languages, frameworks, APIs, databases, cloud, practices).
+2. Keep only terms the candidate verifiably has per a current master. A term the candidate lacks is never mirrored in; it stays a gap (e.g. a JD asking for Angular/Java/Kubernetes/C# still shows React/Node/Docker).
+3. For a kept term, render it in the JD's exact wording when it is a true equivalent of the verified skill: `REST APIs → RESTful APIs` when the JD says RESTful; `CI/CD → CI/CD pipelines`; add `relational databases` next to PostgreSQL; `unit testing`, `microservices`, `event-driven`, `vector search`, `NoSQL`, `SQL Server` only if PostgreSQL/Redis/etc. genuinely cover the meaning. Equivalence must be real; do not relabel a different tool (Docker is not Kubernetes; React is not Angular; Postgres is not MongoDB).
+4. Reorder categories and items so the JD's most-emphasized skills appear first.
+5. Trim lower-relevance items as needed to keep the resume to one page.
+
+The truth boundary is unchanged: mirroring renames a verified skill to the JD's word for the same thing; it never adds, upgrades, or implies an unheld skill. When equivalence is doubtful, keep the candidate's own term.
 
 ## Keyword visibility and recurring gaps
 
